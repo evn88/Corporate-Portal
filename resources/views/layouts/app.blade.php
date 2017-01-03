@@ -34,23 +34,23 @@
             <li><a href="">Телефонный справочник</a></li>
             <li><a href="">Конференции</a></li>
             <li><a href="">Wiki</a></li>
-            <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Прочее<i class="material-icons right">arrow_drop_down</i></a>
+            <li><a class="dropdown-button" href="#!" data-activates="dropdown1" data-beloworigin="true">Прочее<i class="material-icons right">arrow_drop_down</i></a>
             </li>
             <!-- Authentication Links -->
             @if (Auth::guest())
                 <li><a href="{{ url('/login') }}">Вход</a></li>
             @else
                 <li>
-                    <a href="#" class="dropdown-button" data-activates="auth" role="button">
+                    <a href="#" class="dropdown-button" data-activates="auth" data-beloworigin="true" role="button">
                         {{ Auth::user()->name }} <i class="material-icons right">arrow_drop_down</i>
                     </a>
 
-                    <ul id="auth" class="dropdown-content" role="menu">
+                    <ul id="auth" class="dropdown-content blue" role="menu">
                         <li>
-                            <a href="{{ url('/logout') }}"
+                            <a href="{{ url('/logout') }}" class="white-text"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                Logout
+                                Выход
                             </a>
 
                             <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
