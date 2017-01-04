@@ -29,11 +29,11 @@
         <a href="/" class="brand-logo">{{ config('app.name', 'Laravel') }}</a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
-            <li><a href="/">Главная</a></li>
-            <li><a href="">Файлообменник</a></li>
-            <li><a href="">Телефонный справочник</a></li>
-            <li><a href="">Конференции</a></li>
-            <li><a href="">Wiki</a></li>
+            <li><a href="{{ url('/') }}">Главная</a></li>
+            <li><a href="{{ url('/fileshare') }}">Файлообменник</a></li>
+            <li><a href="{{ url('/phones') }}">Телефонный справочник</a></li>
+            <li><a href="{{ url('/conferences') }}">Конференции</a></li>
+            <li><a href="{{ url('/wiki') }}">Wiki</a></li>
             <li><a class="dropdown-button" href="#!" data-activates="dropdown1" data-beloworigin="true">Прочее<i class="material-icons right">arrow_drop_down</i></a>
             </li>
             <!-- Authentication Links -->
