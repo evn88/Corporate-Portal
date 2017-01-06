@@ -20,3 +20,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 Route::get('/fileshare', 'FileshareController@index');
 Route::get('/phones', 'PhonesController@index');
+Route::get('/conferences', 'ConferencesController@index');
