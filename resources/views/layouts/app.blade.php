@@ -10,6 +10,7 @@
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="/css/materialize.min.css">
+    <link rel="stylesheet" href="{{ url('/css/fileshare.css') }}">
     <!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode([

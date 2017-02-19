@@ -1,0 +1,16 @@
+.file-drop-zone {
+    border: 1px dashed #aaa;
+    border-radius: 4px;
+    height: 100%;
+    text-align: center;
+    vertical-align: middle;
+    margin: 12px 15px 12px 12px;
+    padding: 5px;
+}
+
+.file-drop-zone-title {
+    color: #aaa;
+    font-size: 1.6em;
+    padding: 85px 10px;
+    cursor: default;
+}
