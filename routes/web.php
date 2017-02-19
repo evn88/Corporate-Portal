@@ -21,3 +21,20 @@ Route::get('/home', 'HomeController@index');
 Route::get('/fileshare', 'FileshareController@index');
 Route::get('/phones', 'PhonesController@index');
 Route::get('/conferences', 'ConferencesController@index');
+
+Route::group(['prefix'=>'admin','middleware' => ['auth']], function()
+{
+    Route::get('/', function()
+    {
+        return view('admin.dashboard');
+    });
+
+
+/*
+    Route::get('user/profile', function()
+    {
+        return dd('user/profile');
+    });
+*/
+
+});

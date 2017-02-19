@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{ url('/css/fileshare.css') }}">
     <!-- Scripts -->
     <script>
-        window.Laravel = <?php echo json_encode([
+        window.Laravel =<?= json_encode([
                 'csrfToken' => csrf_token(),
         ]); ?>
     </script>
@@ -41,12 +41,16 @@
             @if (Auth::guest())
                 <li><a href="{{ url('/login') }}">Вход</a></li>
             @else
+
                 <li>
                     <a href="#" class="dropdown-button" data-activates="auth" data-beloworigin="true" role="button">
                         {{ Auth::user()->name }} <i class="material-icons right">arrow_drop_down</i>
                     </a>
 
                     <ul id="auth" class="dropdown-content blue" role="menu">
+                        @if (Auth::user()->isAdmin)
+                            <li><a href="{{ url('/admin') }}" class="white-text">Админка</a></li>
+                        @endif
                         <li>
                             <a href="{{ url('/logout') }}" class="white-text"
                                onclick="event.preventDefault();
