@@ -25,16 +25,22 @@
     <li><a href="">Опросы и голосования</a></li>
 </ul>
 
+<ul id="dropdown2" class="dropdown-content">
+    <li><a href="{{ url('/fileshare') }}">Файлообменник</a></li>
+    <li><a href="{{ url('/phones') }}">Телефонный справочник</a></li>
+    <li><a href="{{ url('/conferences') }}">Конференции</a></li>
+    <li><a href="{{ url('/wiki') }}">Wiki</a></li>
+</ul>
+
 <nav class="blue darken-2">
     <div class="nav-wrapper container">
-        <a href="/" class="brand-logo">{{ config('app.name', 'Laravel') }}</a>
+        <a href="/" class="brand-logo hide-on-small-and-down"><img src="{{ config('app.logo') }}" height="48px" vspace="7px" hspace="5px" align="left"> {{ config('app.name', 'Portal') }}</a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
             <li><a href="{{ url('/') }}">Главная</a></li>
-            <li><a href="{{ url('/fileshare') }}">Файлообменник</a></li>
-            <li><a href="{{ url('/phones') }}">Телефонный справочник</a></li>
-            <li><a href="{{ url('/conferences') }}">Конференции</a></li>
-            <li><a href="{{ url('/wiki') }}">Wiki</a></li>
+
+
+            <li><a class="dropdown-button" href="#!" data-activates="dropdown2" data-beloworigin="true">Сервисы<i class="material-icons right">arrow_drop_down</i></a>
             <li><a class="dropdown-button" href="#!" data-activates="dropdown1" data-beloworigin="true">Прочее<i class="material-icons right">arrow_drop_down</i></a>
             </li>
             <!-- Authentication Links -->
@@ -68,11 +74,11 @@
         </ul>
         <ul class="side-nav" id="mobile-demo">
             <li><a href="/">Главная</a></li>
-            <li><a href="">Файлообменник</a></li>
-            <li><a href="">Телефонный справочник</a></li>
-            <li><a href="">Конференции</a></li>
+            <li><a href="{{ url('/fileshare') }}">Файлообменник</a></li>
+            <li><a href="{{ url('/phones') }}">Телефонный справочник</a></li>
+            <li><a href="{{ url('/conferences') }}">Конференции</a></li>
             <li><a href="">Опросы и голосования</a></li>
-            <li><a href="">Wiki</a></li>
+            <li><a href="{{ url('/wiki') }}">Wiki</a></li>
 
         </ul>
     </div>
@@ -92,8 +98,9 @@
     </ul>
 </div>
 -->
-<script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
+<script src="/js/jquery-2.1.1.min.js"></script>
 <!-- Compiled and minified JavaScript -->
 <script src="/js/materialize.min.js"></script>
+<script src="/js/app.js"></script>
 </body>
 </html>
