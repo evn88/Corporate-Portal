@@ -18,10 +18,10 @@
     </script>
     <div class="container">
         <div class="section">
-            <h3>Файлообменник</h3>
+            <h2>Файлообменник</h2>
             <form action="#" enctype="multipart/form-data" method="post">
                 <div class="row">
-                    <div class="col s8">
+                    <div class="col-md-8">
                         <div class=" file-drop-zone">
                             <div class="file-drop-zone-title">Перетащите файлы сюда …</div>
                             <div class="file-preview-thumbnails"></div>
@@ -42,7 +42,7 @@
                         </div>
                     </div>
 
-                    <div class="col s4">
+                    <div class="col-md-4">
                         <div class="card">
                             <div class="card-content">
                                 <div class="section">

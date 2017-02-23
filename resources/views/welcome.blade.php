@@ -65,11 +65,11 @@
                         В настройках вашей учетной записи можно отключить отображение вашего дня рождения
                     </div>
                     <ul class="list-group">
-                        <a href="" class="list-group-item active">
+                        <a href="" class="list-group-item">
                             <span class="badge">05.10</span>
-                            Вершков Егор
+                            Вершков Егор <img src="{{url('img/85.png')}}" width="25px">
                         </a>
-                        <a href="" class="list-group-item active">
+                        <a href="" class="list-group-item happybd">
                             <span class="badge">05.10</span>
                             Попов Николай
                         </a>
