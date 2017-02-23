@@ -7,9 +7,10 @@
 
     <title>Корпоративный портал</title>
     <!--Import Google Icon Font-->
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
     <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="/css/materialize.min.css">
+    <link rel="stylesheet" href="{{ url('/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url('/css/app.css') }}">
     <link rel="stylesheet" href="{{ url('/css/fileshare.css') }}">
     <!-- Scripts -->
     <script>
@@ -19,88 +20,84 @@
     </script>
 </head>
 <body>
-<!-- Dropdown Structure -->
-<ul id="dropdown1" class="dropdown-content">
-    <li><a href="">АСКУЭ</a></li>
-    <li><a href="">Опросы и голосования</a></li>
-</ul>
+<nav class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/"><img src="{{ url(config('app.logo')) }}" height="25px" hspace="10" align="left"> {{ config('app.name', 'Portal') }}</a>
+        </div>
 
-<ul id="dropdown2" class="dropdown-content">
-    <li><a href="{{ url('/fileshare') }}">Файлообменник</a></li>
-    <li><a href="{{ url('/phones') }}">Телефонный справочник</a></li>
-    <li><a href="{{ url('/conferences') }}">Конференции</a></li>
-    <li><a href="{{ url('/wiki') }}">Wiki</a></li>
-</ul>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+            <ul class="nav navbar-nav">
+                <li class="{{ Request::is('/') ? 'active' : '' }}"><a href="/">Главная <span class="sr-only">(current)</span></a></li>
+                <li class="{{ Request::is('fileshare') ? 'active' : '' }}"><a href="{{ url('fileshare') }}">Файлообменник</a></li>
+                <li class="{{ Request::is('phones') ? 'active' : '' }}"><a href="{{ url('phones') }}">Телефонный справочник</a></li>
+                <li><a href="http://otrs.voenet.local/" target="_blank">Техническая поддрежка</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Сервисы <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
 
-<nav class="blue darken-2">
-    <div class="nav-wrapper container">
-        <a href="/" class="brand-logo hide-on-small-and-down"><img src="{{ config('app.logo') }}" height="48px" vspace="7px" hspace="5px" align="left"> {{ config('app.name', 'Portal') }}</a>
-        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-        <ul class="right hide-on-med-and-down">
-            <li><a href="{{ url('/') }}">Главная</a></li>
-
-
-            <li><a class="dropdown-button" href="#!" data-activates="dropdown2" data-beloworigin="true">Сервисы<i class="material-icons right">arrow_drop_down</i></a>
-            <li><a class="dropdown-button" href="#!" data-activates="dropdown1" data-beloworigin="true">Прочее<i class="material-icons right">arrow_drop_down</i></a>
-            </li>
-            <!-- Authentication Links -->
-            @if (Auth::guest())
-                <li><a href="{{ url('/login') }}">Вход</a></li>
-            @else
-
-                <li>
-                    <a href="#" class="dropdown-button" data-activates="auth" data-beloworigin="true" role="button">
-                        {{ Auth::user()->name }} <i class="material-icons right">arrow_drop_down</i>
-                    </a>
-
-                    <ul id="auth" class="dropdown-content blue" role="menu">
-                        @if (Auth::user()->isAdmin)
-                            <li><a href="{{ url('/admin') }}" class="white-text">Админка</a></li>
-                        @endif
-                        <li>
-                            <a href="{{ url('/logout') }}" class="white-text"
-                               onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                Выход
-                            </a>
-
-                            <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                                {{ csrf_field() }}
-                            </form>
-                        </li>
+                        <li><a href="{{ url('conferences') }}">Конференции</a></li>
+                        <li><a href="{{ url('polls') }}">Опросы и голосования</a></li>
+                        <li class="divider"></li>
+                        <li><a href="{{ url('askue') }}">АСКУЭ</a></li>
+                        <li><a href="{{ url('wiki') }}">Wiki</a></li>
                     </ul>
                 </li>
-            @endif
-        </ul>
-        <ul class="side-nav" id="mobile-demo">
-            <li><a href="/">Главная</a></li>
-            <li><a href="{{ url('/fileshare') }}">Файлообменник</a></li>
-            <li><a href="{{ url('/phones') }}">Телефонный справочник</a></li>
-            <li><a href="{{ url('/conferences') }}">Конференции</a></li>
-            <li><a href="">Опросы и голосования</a></li>
-            <li><a href="{{ url('/wiki') }}">Wiki</a></li>
 
-        </ul>
+            </ul>
+            <!--
+            <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Поиск">
+                </div>
+                <button type="submit" class="btn btn-default">Найти</button>
+            </form>
+            -->
+            <ul class="nav navbar-nav navbar-right">
+                <!-- Authentication Links -->
+                @if (Auth::guest())
+                    <li><a href="{{ url('/login') }}">Вход</a></li>
+                @else
+
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            @if (Auth::user()->isAdmin)
+                                <li><a href="{{ url('/admin') }}" class="white-text">Админка</a></li>
+                            @endif
+                                <li>
+                                    <a href="{{ url('/logout') }}" class="white-text"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        Выход
+                                    </a>
+
+                                    <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
+                                </li>
+                        </ul>
+                    </li>
+                @endif
+            </ul>
+        </div>
     </div>
 </nav>
 
+
 @yield('content')
-<!--
-<div class="fixed-action-btn horizontal click-to-toggle">
-    <a class="btn-floating btn-large red">
-        <i class="material-icons">menu</i>
-    </a>
-    <ul>
-        <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
-        <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
-        <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-        <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
-    </ul>
-</div>
--->
-<script src="/js/jquery-2.1.1.min.js"></script>
+
+
+<script src="{{ url('/js/jquery-2.1.1.min.js') }}"></script>
+<script src="{{ url('/js/bootstrap.min.js') }}"></script>
 <!-- Compiled and minified JavaScript -->
-<script src="/js/materialize.min.js"></script>
-<script src="/js/app.js"></script>
+
+<script src="{{ url('/js/app.js') }}"></script>
 </body>
 </html>
