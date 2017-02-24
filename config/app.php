@@ -13,7 +13,8 @@ return [
     */
 
     'name' => 'Портал',
-    'logo' => 'img/logo_white.png',
+    'logo_blue' => 'img/logo_blue.png',
+    'logo_white' => 'img/logo_white.png',
 
     /*
     |--------------------------------------------------------------------------
