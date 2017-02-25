@@ -15,9 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 */
+Route::get('/', 'HomeController@index');
 Auth::routes();
 
-Route::get('/', 'HomeController@index');
+
 Route::get('/fileshare', 'FileshareController@index');
 Route::get('/phones', 'PhonesController@index');
 Route::get('/conferences', 'ConferencesController@index');
