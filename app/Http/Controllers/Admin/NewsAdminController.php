@@ -44,14 +44,19 @@ class NewsAdminController extends AdminController
 
     public function update(Requests\CreateNewsRequest $request, News $news)
     {
-        $news->update($request->all());
+
+        $news->title = $request->title;
+        $news->description = $request->description;
+        $news->user_id = $request->user()->id;
+        $news->update();
+
         return redirect('admin/news');
     }
 
 
-    public function destroy(Room $room)
+    public function destroy(News $news)
     {
-        $room->delete();
-        return redirect('/room/');
+        $news->delete();
+        return redirect('admin/news');
     }
 }

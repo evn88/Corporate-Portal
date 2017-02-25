@@ -7,8 +7,8 @@
             <tr>
                 <th width="1%">#</th>
                 <th width="13%" class="text-center">Дата публикации</th>
-                <th width="63%">Заголовок</th>
-                <th width="23%">Управление</th>
+                <th width="62%">Заголовок</th>
+                <th width="24%">Управление</th>
             </tr>
             </thead>
             <tbody>
@@ -18,8 +18,13 @@
                     <td class="text-center">{{$item->created_at}}</td>
                     <td>{{$item->title}}</td>
                     <td>
+                        {!! Form::open(array('url' => 'admin/news/'.$item->id, 'method' => 'DELETE')) !!}
+                        
                         <a href="{{url('admin/news/'.$item->id.'/edit')}}" class="btn btn-default">редактировать</a>
-                        <a href="{{url('admin/news/delete/'.$item->id)}}" class="btn btn-danger">удалить</a>
+                        {{ Form::submit('Удалить', array('class' => 'btn btn-danger')) }}
+
+                        {!! Form::close() !!}
+
                     </td>
                 </tr>
             @endforeach
