@@ -7,6 +7,7 @@ CKEDITOR.editorConfig = function( config ) {
     // Define changes to default configuration here.
     // For the complete reference:
     // http://docs.ckeditor.com/#!/api/CKEDITOR.config
+    config.height = 450;
 
     // The toolbar groups arrangement, optimized for a single toolbar row.
     config.toolbarGroups = [
@@ -47,5 +48,7 @@ CKEDITOR.editorConfig = function( config ) {
 
     // Let's have it basic on dialogs as well.
     config.removeDialogTabs = 'link:advanced';
+
+
 };
 
