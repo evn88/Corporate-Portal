@@ -93,8 +93,8 @@
 
 <script src="{{ url('/js/jquery-2.1.1.min.js') }}"></script>
 <script src="{{ url('/js/bootstrap.min.js') }}"></script>
-<!-- Compiled and minified JavaScript -->
-
 <script src="{{ url('/js/app.js') }}"></script>
+<script src="{{ url('/vendor/unisharp/laravel-ckeditor/ckeditor.js')}}"></script>
+@yield('footer')
 </body>
 </html>

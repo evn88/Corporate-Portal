@@ -6,9 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Корпоративный портал</title>
-    <!--Import Google Icon Font-->
-    <!--<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
-    <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="{{ url('/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ url('/css/app.css') }}">
     <link rel="stylesheet" href="{{ url('/css/fileshare.css') }}">
@@ -29,7 +26,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/"><img src="{{ url(config('app.logo')) }}" height="25px" hspace="10" align="left"> {{ config('app.name', 'Portal') }}</a>
+            <a class="navbar-brand" href="/"><img src="{{ url(config('app.logo_white')) }}" height="25px" hspace="10" align="left"> {{ config('app.name', 'Portal') }}</a>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">

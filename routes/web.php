@@ -28,14 +28,12 @@ Route::group(['prefix'=>'admin','middleware' => ['auth']], function()
     {
         return view('admin.dashboard');
     });
-
-Route::get('/test', 'Admin\AdminController@test');
-
-/*
+    Route::resource('/news', 'Admin\NewsAdminController');
+    Route::get('/test', 'Admin\AdminController@test');
     Route::get('user/profile', function()
     {
         return dd('user/profile');
     });
-*/
+
 
 });
