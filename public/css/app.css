@@ -1,3 +1,19 @@
 h1 {  font-size: 24pt; }
 h2 { font-size: 20pt; }
 h3 { font-size: 14pt; }
+
+.news_date {
+    margin-top: 5px;
+}
+
+/* ADMIN */
+.dash_box {
+    text-align: center;
+}
+.dash_box h1 {
+    font-size: 20pt;
+    text-transform: uppercase;
+}
+.dash_box  p {
+    font-size: 34pt;
+}

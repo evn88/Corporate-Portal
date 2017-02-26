@@ -19,6 +19,7 @@
                                          class="img img-responsive">-->
                                     <p>{!!$item->description!!}</p>
                                     <hr>
+                                    <small class="pull-left news_date">{{$item->created_at}}</small>
                                     <a href="#" class="btn btn-default pull-right">Подробнее</a>
                                 </div>
                             </div>

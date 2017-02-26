@@ -1,9 +1,7 @@
 @if (count($errors) > 0)
     <!-- Form Error List -->
     <div class="alert alert-danger">
-        <strong>Whoops! Something went wrong!</strong>
-
-        <br><br>
+        <h4>Упс! Что-то пошло не так!</h4>
 
         <ul>
             @foreach ($errors->all() as $error)
