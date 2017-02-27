@@ -53,7 +53,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://portal.web.voenet.local'),
+    'url' => env('APP_URL', 'http://portal.voenet.local'),
 
     /*
     |--------------------------------------------------------------------------

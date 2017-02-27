@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="{{ url('/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ url('/css/app.css') }}">
     <link rel="stylesheet" href="{{ url('/css/fileshare.css') }}">
+    <link rel="stylesheet" href="{{ url('/lib/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+
     <!-- Scripts -->
     <script>
         window.Laravel =<?= json_encode([
