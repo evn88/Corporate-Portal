@@ -35,5 +35,11 @@ class HomeController extends Controller
         $news = News::find($id);
         return view('news/detail', compact('news'));
     }
+
+    public function offerNews()
+    {
+        $this->middleware('auth');
+        return view('news/offer');
+    }
     
 }

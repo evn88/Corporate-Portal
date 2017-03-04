@@ -8,7 +8,8 @@ Auth::routes();
 Route::get('fileshare', 'FileshareController@index');
 Route::get('phones', 'PhonesController@index');
 Route::get('conferences', 'ConferencesController@index');
-Route::get('news/{id}', 'HomeController@getNews');
+Route::get('news/{id}', 'HomeController@getNews')->where('id', '[0-9]+');
+Route::get('news/offer', 'HomeController@offerNews');
 /*
  * Админка
  */

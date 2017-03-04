@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="{{ url('/css/app.css') }}">
     <link rel="stylesheet" href="{{ url('/css/fileshare.css') }}">
     <link rel="stylesheet" href="{{ url('/lib/font-awesome-4.7.0/css/font-awesome.min.css') }}">
-    <link rel="stylesheet" href="{{ url('/lib/bootstrap-select-1.12.2/dist/bootstrap-select.min.css') }}">
 
     <!-- Scripts -->
     <script>
@@ -96,9 +95,7 @@
 
 <script src="{{ url('/js/jquery-2.1.1.min.js') }}"></script>
 <script src="{{ url('/js/bootstrap.min.js') }}"></script>
-<script src="{{ url('/lib/bootstrap-select-1.12.2/dist/js/bootstrap-select.min.js') }}"></script>
 <!-- Compiled and minified JavaScript -->
-
 <script src="{{ url('/js/app.js') }}"></script>
 </body>
 </html>
