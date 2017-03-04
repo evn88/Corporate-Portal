@@ -18,7 +18,7 @@
     </script>
     <div class="container">
         <div class="section">
-            <h2>Файлообменник</h2>
+            <h1>Файлообменник</h1>
             <form action="#" enctype="multipart/form-data" method="post">
                 <div class="row">
                     <div class="col-md-8">

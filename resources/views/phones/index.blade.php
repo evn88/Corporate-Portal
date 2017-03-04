@@ -2,7 +2,7 @@
 @section('content')
 <div class="container">
 
-    <h2>Телефонный справочник</h2>
+    <h1>Телефонный справочник</h1>
     <div class="form-group">
     <form class="ng-pristine ng-valid" role="search">
         <div class="form-group" style="display:inline;">

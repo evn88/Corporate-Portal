@@ -4,8 +4,12 @@
 
 </div>
 <div class="form-group">
-    {{ Form::label('description','Текст новости') }}
-    {{ Form::textarea('description', null, array('id'=>'ckeditor','class' => 'form-control', 'required')) }}
+    {{ Form::label('description','Краткое описание новости') }}
+    {{ Form::textarea('description', null, array('class' => 'form-control','rows'=>'2' ,'required')) }}
+</div>
+<div class="form-group">
+    {{ Form::label('text','Новость') }}
+    {{ Form::textarea('text', null, array('id'=>'ckeditor','class' => 'form-control', 'required')) }}
 </div>
 {{ Form::submit('Сохранить', array('class' => 'btn btn-primary')) }}
 

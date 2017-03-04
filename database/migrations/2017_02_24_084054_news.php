@@ -16,7 +16,8 @@ class News extends Migration
         Schema::create('news', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->longText('description')->nullable();
+            $table->string('description', 255);
+            $table->longText('text')->nullable();
             $table->text('img')->nullable();
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
@@ -31,6 +32,6 @@ class News extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('news');
     }
 }

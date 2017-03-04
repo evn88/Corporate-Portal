@@ -25,11 +25,11 @@ class NewsAdminController extends AdminController
         return view('admin.news.create');
     }
 
-    public function store(Requests\CreateNewsRequest $request)
+    public function store(Requests\CreateNewsRequest $request, News $news)
     {
-        $news = new News;
         $news->title = $request->title;
         $news->description = $request->description;
+        $news->text = $request->text;
         $news->user_id = $request->user()->id;
         $news->save();
 
@@ -48,6 +48,7 @@ class NewsAdminController extends AdminController
 
         $news->title = $request->title;
         $news->description = $request->description;
+        $news->text = $request->text;
         $news->user_id = $request->user()->id;
         $news->update();
 

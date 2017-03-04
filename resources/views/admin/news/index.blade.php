@@ -12,6 +12,14 @@
             </tr>
             </thead>
             <tbody>
+            @if($news->count() == 0)
+                <tr>
+                    <td></td>
+                    <td class="text-center"></td>
+                    <td><a href="{{url('admin/news/create')}}">Добавить новость</a></td>
+                    <td></td>
+                </tr>
+            @endif
             @foreach($news as $item)
                 <tr>
                     <td>{{$item->id}}</td>

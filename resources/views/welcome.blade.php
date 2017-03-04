@@ -6,26 +6,47 @@
 
                 <div class="col-md-9">
                     <!-- page content -->
-                    <h1>Новости</h1>
-                    @foreach($news as $item)
+                    <h1>Новости компании
+
+                        <div class="btn-group pull-right">
+                            <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Рубрики
+                                &nbsp;<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Все новости</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Мероприятия</a></li>
+                                <li><a href="#">Филиалы</a></li>
+                                <li><a href="#">Оповещения</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Интересное</a></li>
+                            </ul>
+                        </div>
+                    </h1>
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h2>{{$item->title}}</h2>
+                            @if($news->count() == 0)
+                                <div class="well well-lg">
+                                    <h3>На портале еще нет новостей.</h3>
+                                    <p>Вы можете предложить <a href="#">опубликовать свою новсть</a></p>
                                 </div>
-                                <div class="panel-body">
-                                    <!--<img src="http://voel.ru/files/news/news_images/20161017/plaz.jpg"
-                                         class="img img-responsive">-->
-                                    <p>{!!$item->description!!}</p>
-                                    <hr>
-                                    <small class="pull-left news_date">{{$item->created_at}}</small>
-                                    <a href="#" class="btn btn-default pull-right">Подробнее</a>
+                            @endif
+                            @foreach($news as $item)
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h2>{{$item->title}}</h2>
+                                    </div>
+                                    <div class="panel-body">
+                                        <!--<img src="http://voel.ru/files/news/news_images/20161017/plaz.jpg"
+                                             class="img img-responsive">-->
+                                        <p>{!!$item->description!!}</p>
+                                        <hr>
+                                        <small class="pull-left news_date">{{$item->created_at}}</small>
+                                        <a href="#" class="btn btn-default pull-right">Подробнее</a>
+                                    </div>
                                 </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
-                    @endforeach
                 </div>
 
                 <div class="col-md-3">
