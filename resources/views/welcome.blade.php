@@ -44,7 +44,7 @@
                                          class="img img-responsive">-->
                                     <p class="lead">{!!$item->description!!}</p>
 
-                                    <small class="pull-left news_date">{{$item->created_at}}</small>
+                                    <small class="pull-left news_date">{{$item->created_at}} / Автор: {{$item->user->name}}</small>
                                     <a href="{{ url('news/'. $item->id) }}"
                                        class="btn btn-default pull-right">Подробнее</a>
                                 </div>

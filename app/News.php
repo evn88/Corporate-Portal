@@ -27,4 +27,9 @@ class News extends Model
          */
         return $query->where('id','!=',$id)->orderBy('id','desc')->limit('3')->get();
     }
+    
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

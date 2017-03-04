@@ -2,7 +2,7 @@
 @section('content')
     <div class="container">
         <h1>{{$news->title}} </h1>
-        <p class="news_date">{{$news->created_at}}</p>
+        <p class="news_date">{{$news->created_at}} / Автор: {{$news->user->name}}</p>
         <div class="panel panel-body">
             {!! $news->text !!}
         </div>
