@@ -19,4 +19,12 @@ class News extends Model
     {
         return Carbon::parse($value)->format('d.m.Y H:i');
     }
+
+    public function scopeThreeNews($query, $id)
+    {
+        /*
+         * выводим в блоке "другие новости"
+         */
+        return $query->where('id','!=',$id)->orderBy('id','desc')->limit('3')->get();
+    }
 }

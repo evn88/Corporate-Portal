@@ -28,5 +28,12 @@ class HomeController extends Controller
 
         return view('welcome', compact('news'));
     }
+
+    public function getNews($id)
+    {
+        //dd($id);
+        $news = News::find($id);
+        return view('news/detail', compact('news'));
+    }
     
 }

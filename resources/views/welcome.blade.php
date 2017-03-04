@@ -38,10 +38,10 @@
                                     <div class="panel-body">
                                         <!--<img src="http://voel.ru/files/news/news_images/20161017/plaz.jpg"
                                              class="img img-responsive">-->
-                                        <p>{!!$item->description!!}</p>
-                                        <hr>
+                                        <p class="lead">{!!$item->description!!}</p>
+
                                         <small class="pull-left news_date">{{$item->created_at}}</small>
-                                        <a href="#" class="btn btn-default pull-right">Подробнее</a>
+                                        <a href="{{ url('news/'. $item->id) }}" class="btn btn-default pull-right">Подробнее</a>
                                     </div>
                                 </div>
                             @endforeach
