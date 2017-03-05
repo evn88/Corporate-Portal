@@ -8,7 +8,7 @@
 
                 <h1>Новости компании
                     <div class="pull-right">
-                        <a href="{{ url('news/offer') }}" class="btn btn-default ">Предложить свою новость</a>
+                        <a href="{{ url('news/offer') }}" class="btn btn-default "><i class="fa fa-file-text-o" aria-hidden="true"></i> Предложить свою новость</a>
                         <div class="btn-group">
                             <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Рубрики
                                 &nbsp;<span class="caret"></span></a>
@@ -31,7 +31,7 @@
                         @if($news->count() == 0)
                             <div class="well well-lg">
                                 <h3>На портале еще нет новостей.</h3>
-                                <p>Вы можете предложить <a href="#">опубликовать свою новсть</a></p>
+                                <p>Вы можете предложить <a href="{{ url('news/offer') }}">опубликовать свою новсть</a></p>
                             </div>
                         @endif
                         @foreach($news as $item)
@@ -44,7 +44,9 @@
                                          class="img img-responsive">-->
                                     <p class="lead">{!!$item->description!!}</p>
 
-                                    <small class="pull-left news_date">{{$item->created_at}} / Автор: {{$item->user->name}}</small>
+                                    <small class="pull-left news_date"><i class="fa fa-calendar" aria-hidden="true"></i> {{$item->created_at}}
+                                        /
+                                        <i class="fa fa-user" aria-hidden="true"></i> <a href="{{url('user/profile').'/'.$item->user->id}}">{{$item->user->name}}</a></small>
                                     <a href="{{ url('news/'. $item->id) }}"
                                        class="btn btn-default pull-right">Подробнее</a>
                                 </div>

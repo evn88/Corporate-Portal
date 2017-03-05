@@ -6,6 +6,9 @@ h3 { font-size: 14pt; }
     margin-top: 5px;
     color: grey;
 }
+.news_date a {
+    color: grey;
+}
 
 /* ADMIN */
 .dash_box {

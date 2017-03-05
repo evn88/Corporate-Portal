@@ -25,7 +25,7 @@ class CreateNewsRequest extends FormRequest
     {
         return [
             'title' => 'required|max:255|min:3',
-            'description' => 'required',
+            'description' => 'required|max:255',
         ];
     }
 }
