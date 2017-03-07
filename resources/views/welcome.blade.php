@@ -44,11 +44,10 @@
 
                                     <small class="pull-left news_date"><i class="fa fa-calendar" aria-hidden="true"></i> {{$item->created_at}}
                                          /
-                                         <i class="fa fa-tag" aria-hidden="true"></i> <a href="{{url('news/').'/'}}">Рубрика</a>
+                                         <i class="fa fa-tag" aria-hidden="true"></i> <a href="{{url('news/category').'/'}}">Рубрика</a>
                                          /
                                         <i class="fa fa-user" aria-hidden="true"></i> <a href="{{url('user/profile').'/'.$item->user->id}}">{{$item->user->name}}</a></small>
-                                    <a href="{{ url('news/'. $item->id) }}"
-                                       class="btn btn-default pull-right">Подробнее</a>
+                                    <a href="{{ url('news/'. $item->id) }}" class="btn btn-default pull-right">Подробнее</a>
                                 </div>
                             </div>
                         @endforeach
