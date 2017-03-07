@@ -36,16 +36,16 @@
                         @endif
                         @foreach($news as $item)
                             <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h2>{{$item->title}}</h2>
-                                </div>
                                 <div class="panel-body">
+                                    <h1 class="news_head"><a href="{{ url('news/'. $item->id) }}">{{$item->title}}</a></h1>
                                     <!--<img src="http://voel.ru/files/news/news_images/20161017/plaz.jpg"
                                          class="img img-responsive">-->
                                     <p class="lead">{!!$item->description!!}</p>
 
                                     <small class="pull-left news_date"><i class="fa fa-calendar" aria-hidden="true"></i> {{$item->created_at}}
-                                        /
+                                         /
+                                         <i class="fa fa-tag" aria-hidden="true"></i> <a href="{{url('news/').'/'}}">Рубрика</a>
+                                         /
                                         <i class="fa fa-user" aria-hidden="true"></i> <a href="{{url('user/profile').'/'.$item->user->id}}">{{$item->user->name}}</a></small>
                                     <a href="{{ url('news/'. $item->id) }}"
                                        class="btn btn-default pull-right">Подробнее</a>

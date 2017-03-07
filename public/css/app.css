@@ -1,11 +1,40 @@
-h1 {  font-size: 24pt; }
-h2 { font-size: 20pt; }
-h3 { font-size: 14pt; }
+body {
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+}
+
+h1 {
+    font-size: 24pt;
+}
+
+h2 {
+    font-size: 20pt;
+}
+
+h3 {
+    font-size: 14pt;
+}
+
+.news_head, .news_head a {
+    box-sizing: border-box;
+    color: rgb(77, 185, 244);
+    display: block;
+    font-size: 36px;
+    font-weight: 600;
+    /*height: 39px;*/
+    line-height: 39.6px;
+    margin-bottom: 40px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 5px;
+    text-align: left;
+    text-size-adjust: 100%;
+}
 
 .news_date {
     margin-top: 5px;
     color: grey;
 }
+
 .news_date a {
     color: grey;
 }
@@ -14,10 +43,12 @@ h3 { font-size: 14pt; }
 .dash_box {
     text-align: center;
 }
+
 .dash_box h1 {
     font-size: 20pt;
     text-transform: uppercase;
 }
-.dash_box  p {
+
+.dash_box p {
     font-size: 34pt;
 }

@@ -1,8 +1,13 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
-        <h1>{{$news->title}} </h1>
-        <p class="news_date">{{$news->created_at}} / Автор: {{$news->user->name}}</p>
+        <h1 class="news_head">{{$news->title}}</h1>
+        <p class="news_date"><i class="fa fa-calendar" aria-hidden="true"></i>
+            {{$news->created_at}}
+            /
+             <i class="fa fa-tag" aria-hidden="true"></i> <a href="{{url('news/').'/'}}">Рубрика</a>
+            /
+            <i class="fa fa-user" aria-hidden="true"></i> <a href="{{url('user/profile').'/'.$news->user->id}}">{{$news->user->name}}</a></p>
         <div class="panel panel-body">
             {!! $news->text !!}
         </div>
