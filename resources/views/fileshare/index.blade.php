@@ -19,6 +19,14 @@
     <div class="container">
         <div class="section">
             <h1>Файлообменник</h1>
+
+            @role('root')
+            <p>This is visible to users with the admin role. Gets translated to
+                \Entrust::role('admin')</p>
+            @endrole
+
+            {!! dd(Auth::user()->hasRole('root')) !!}}
+
             <form action="#" enctype="multipart/form-data" method="post">
                 <div class="row">
                     <div class="col-md-8">

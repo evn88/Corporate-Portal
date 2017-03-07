@@ -13,6 +13,11 @@ use App\News;
 
 class NewsAdminController extends AdminController
 {
+    public function __construct()
+    {
+        $this->middleware('role:root');
+    }
+
     public function index()
     {
         $news = News::orderBy('id','desc')->get();

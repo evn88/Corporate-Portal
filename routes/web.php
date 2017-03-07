@@ -13,7 +13,7 @@ Route::get('news/offer', 'HomeController@offerNews');
 /*
  * Админка
  */
-Route::group(['prefix'=>'admin','middleware' => ['auth']], function()
+Route::group(['prefix'=>'admin','middleware' => ['auth','role:admin|root|phones']], function()
 {
 
     Route::resource('/', 'Admin\AdminController');
