@@ -23,7 +23,7 @@ class News extends Model
     public function scopeThreeNews($query, $id)
     {
         /*
-         * выводим в блоке "другие новости"
+         * выводим в блоке "другие новости" 3 других новости
          */
         return $query->where('id','!=',$id)->orderBy('id','desc')->limit('3')->get();
     }
