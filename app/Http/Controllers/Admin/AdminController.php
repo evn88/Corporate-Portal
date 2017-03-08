@@ -20,6 +20,7 @@ class AdminController extends Controller
 
     public function index(){
         $data['news'] = News::count();
+        $data['users'] = User::count();
         return view('admin.dashboard', compact('data'));
     }
 

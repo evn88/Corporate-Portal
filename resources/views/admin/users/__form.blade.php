@@ -5,7 +5,7 @@
 </div>
 <div class="form-group">
     {{ Form::label('roles','Роли пользователя') }}
-    {{ Form::select('roles', $roles, null, ['class'=>'form-control', 'multiple' => true])}}
+    {!! Form::select('roles[]', $roles,(!empty($userRole))? $userRole : '', array('class' => 'form-control','multiple')) !!}
 </div>
 <div class="form-group">
     {{ Form::label('email','Email') }}
@@ -13,6 +13,11 @@
 </div>
 <div class="form-group">
     {{ Form::label('password','Пароль') }}
-    {{ Form::password('password', ['class' => 'form-control', 'required']) }}
+    {{ Form::password('password', ['class' => 'form-control', (Request::is('admin/users/create'))? 'required':'']) }}
 </div>
-{{ Form::submit('Добавить', array('class' => 'btn btn-primary')) }}
+<div class="form-group">
+    {{ Form::label('confirm-password','Пароль') }}
+    {!! Form::password('confirm-password', array('placeholder' => 'Confirm Password','class' => 'form-control')) !!}
+</div>
+
+{{ Form::submit('Сохранить', array('class' => 'btn btn-primary')) }}

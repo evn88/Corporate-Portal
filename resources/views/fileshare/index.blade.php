@@ -25,7 +25,6 @@
                 \Entrust::role('admin')</p>
             @endrole
 
-            {!! dd(Auth::user()->hasRole('root')) !!}}
 
             <form action="#" enctype="multipart/form-data" method="post">
                 <div class="row">

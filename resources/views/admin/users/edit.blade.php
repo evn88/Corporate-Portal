@@ -12,7 +12,7 @@
             <div class="panel-body">
                 @include('errors.form')
 
-                {!! Form::model($users, ['method' => 'PATCH', 'action' => ['Admin\UsersAdminController@update', $users->id]]) !!}
+                {!! Form::model($user, ['method' => 'PATCH', 'action' => ['Admin\UsersAdminController@update', $user->id]]) !!}
 
                 @include('admin.users.__form')
 

@@ -14,8 +14,8 @@
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-body dash_box">
-                        <h1>Всего новостей</h1>
-                        <p>{{$data['news']}}</p>
+                        <h1>Всего пользователей</h1>
+                        <p>{{$data['users']}}</p>
                     </div>
                 </div>
             </div>

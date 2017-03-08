@@ -20,7 +20,7 @@ class NewsAdminController extends AdminController
 {
     public function __construct()
     {
-        $this->middleware('role:root');
+        $this->middleware('role:root|programmer');
     }
 
     public function index()

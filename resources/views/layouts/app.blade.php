@@ -66,7 +66,7 @@
                     <li>
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-user-circle-o" aria-hidden="true"></i> {{ Auth::user()->name }} <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            @role('root')
+                            @role(['root','programmer'])
                                 <li><a href="{{ url('admin') }}" class="white-text"><i class="fa fa-lock" aria-hidden="true"></i>  Админка</a></li>
                             @endrole
                                 <li><a href="{{ url('user/profile/'. Auth::user()->id .'/edit') }}" class="white-text"><i class="fa fa-cogs" aria-hidden="true"></i> Настройки профиля</a></li>

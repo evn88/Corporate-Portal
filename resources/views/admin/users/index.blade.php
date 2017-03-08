@@ -3,12 +3,17 @@
     <div class="container">
         <h2>Пользователи портала <a href="{{ url('admin/users/create')}}" class="btn btn-primary pull-right">Добавить
                 пользователя</a></h2>
+        @if ($message = Session::get('success'))
+            <div class="alert alert-success">
+                <p>{{ $message }}</p>
+            </div>
+        @endif
         <table class="table table-striped table-hover ">
             <thead>
             <tr>
                 <th width="1%">#</th>
-                <th width="79%">Имя</th>
-                <th width="13%">Роли</th>
+                <th width="69%">Имя</th>
+                <th width="23%">Роли</th>
                 <th width="7%">Управление</th>
             </tr>
             </thead>
