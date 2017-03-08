@@ -18,6 +18,7 @@ Route::group(['prefix'=>'admin','middleware' => ['auth','role:admin|root|phones'
 
     Route::resource('/', 'Admin\AdminController');
     Route::resource('news', 'Admin\NewsAdminController');
+    Route::resource('users', 'Admin\UsersAdminController');
     Route::get('test', 'Admin\AdminController@test');
     Route::get('user/profile', function()
     {

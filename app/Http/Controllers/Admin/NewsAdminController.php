@@ -10,6 +10,11 @@ namespace app\Http\Controllers\Admin;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Requests;
 use App\News;
+use App\Role;
+use App\User;
+use DB;
+use Hash;
+
 
 class NewsAdminController extends AdminController
 {

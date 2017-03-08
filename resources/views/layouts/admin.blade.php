@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Админка</title>
-    <link rel="stylesheet" href="{{ url('/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ url('/css/app.css') }}">
-    <link rel="stylesheet" href="{{ url('/css/fileshare.css') }}">
-    <link rel="stylesheet" href="{{ url('/lib/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ url('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url('css/app.css') }}">
+    <link rel="stylesheet" href="{{ url('css/fileshare.css') }}">
+    <link rel="stylesheet" href="{{ url('lib/font-awesome-4.7.0/css/font-awesome.min.css') }}">
     <!-- Scripts -->
     <script>
         window.Laravel =<?= json_encode([
@@ -92,10 +92,10 @@
 @yield('content')
 
 
-<script src="{{ url('/js/jquery-2.1.1.min.js') }}"></script>
-<script src="{{ url('/js/bootstrap.min.js') }}"></script>
-<script src="{{ url('/js/app.js') }}"></script>
-<script src="{{ url('/vendor/unisharp/laravel-ckeditor/ckeditor.js')}}"></script>
+<script src="{{ url('js/jquery-2.1.1.min.js') }}"></script>
+<script src="{{ url('js/bootstrap.min.js') }}"></script>
+<script src="{{ url('js/app.js') }}"></script>
+<script src="{{ url('vendor/unisharp/laravel-ckeditor/ckeditor.js')}}"></script>
 @yield('footer')
 </body>
 </html>
