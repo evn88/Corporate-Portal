@@ -33,5 +33,6 @@
                 </tr>
             @endforeach
         </table>
+        {!! $news->render() !!}
     </div>
 @endsection

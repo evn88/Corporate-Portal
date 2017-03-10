@@ -25,7 +25,7 @@ class NewsAdminController extends AdminController
 
     public function index()
     {
-        $news = News::orderBy('id','desc')->get();
+        $news = News::orderBy('id','desc')->paginate(10);
 
         return view('admin.news.index', compact('news'));
     }
