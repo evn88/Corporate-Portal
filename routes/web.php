@@ -10,6 +10,7 @@ Route::get('phones', 'PhonesController@index');
 Route::get('conferences', 'ConferencesController@index');
 Route::get('news/{id}', 'HomeController@getNews')->where('id', '[0-9]+');
 Route::get('news/offer', 'HomeController@offerNews');
+Route::resource('profile', 'ProfileController');
 /*
  * Админка
  */
@@ -20,10 +21,5 @@ Route::group(['prefix'=>'admin','middleware' => ['auth','role:root|programmer|te
     Route::resource('news', 'Admin\NewsAdminController');
     Route::resource('users', 'Admin\UsersAdminController');
     Route::get('test', 'Admin\AdminController@test');
-    Route::get('user/profile', function()
-    {
-        return dd('user/profile');
-    });
-
 
 });

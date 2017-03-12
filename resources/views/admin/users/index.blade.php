@@ -1,8 +1,12 @@
 @extends('layouts.admin')
 @section('content')
     <div class="container">
-        <h2>Пользователи портала <a href="{{ url('admin/users/create')}}" class="btn btn-primary pull-right">Добавить
-                пользователя</a></h2>
+        <h2>Пользователи портала
+            <div class="pull-right">
+                <a href="{{ url('admin/users/roles')}}" class="btn btn-primary">Менеджер ролей</a>
+                <a href="{{ url('admin/users/create')}}" class="btn btn-primary">Добавить пользователя</a>
+            </div>
+        </h2>
         @if ($message = Session::get('success'))
             <div class="alert alert-success">
                 <p>{{ $message }}</p>
@@ -35,7 +39,8 @@
                     <td><a href="{{url('admin/users/'.$user->id.'/edit')}}">{{$user->name}}</a></td>
                     <td>@if(!empty($user->roles))
                             @foreach($user->roles as $role)
-                                <label class="label label-success" data-toggle="tooltip" data-placement="left" title="{{$role->description}}">{{$role->display_name}}</label>
+                                <label class="label label-success" data-toggle="tooltip" data-placement="left"
+                                       title="{{$role->description}}">{{$role->display_name}}</label>
                             @endforeach
                         @endif
 

@@ -12,12 +12,10 @@
     {{ Form::text('email', null,['class' => 'form-control', 'required']) }}
 </div>
 <div class="form-group">
-    {{ Form::label('password','Пароль') }}
-    {{ Form::password('password', ['class' => 'form-control', (Request::is('admin/users/create'))? 'required':'']) }}
+    {{ Form::password('password', ['placeholder' => 'Пароль','class' => 'form-control', (Request::is('admin/users/create'))? 'required':'']) }}
 </div>
 <div class="form-group">
-    {{ Form::label('confirm-password','Пароль') }}
-    {!! Form::password('confirm-password', array('placeholder' => 'Confirm Password','class' => 'form-control')) !!}
+    {!! Form::password('confirm-password', array('placeholder' => 'Подтверждение пароля','class' => 'form-control')) !!}
 </div>
 
 {{ Form::submit('Сохранить', array('class' => 'btn btn-primary')) }}
