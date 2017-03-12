@@ -69,7 +69,7 @@
                             @role(['root','programmer'])
                                 <li><a href="{{ url('admin') }}" class="white-text"><i class="fa fa-lock" aria-hidden="true"></i>  Админка</a></li>
                             @endrole
-                                <li><a href="{{ url('user/profile/'. Auth::user()->id .'/edit') }}" class="white-text"><i class="fa fa-cogs" aria-hidden="true"></i> Настройки профиля</a></li>
+                                <li><a href="{{ url('profile') }}" class="white-text"><i class="fa fa-cogs" aria-hidden="true"></i> Настройки профиля</a></li>
                                 <li>
                                     <a href="{{ url('logout') }}" class="white-text"
                                        onclick="event.preventDefault();
