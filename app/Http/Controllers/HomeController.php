@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $news = News::orderBy('id','desc')->with('user')->get();
+        $news = News::orderBy('id','desc')->with('user')->status('Published')->get();
 
         return view('welcome', compact('news'));
     }

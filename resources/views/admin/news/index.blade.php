@@ -7,7 +7,9 @@
             <tr>
                 <th width="1%">#</th>
                 <th width="13%" class="text-center">Дата публикации</th>
-                <th width="79%">Заголовок</th>
+                <th width="59%">Заголовок</th>
+                <th width="10%">Автор</th>
+                <th width="10%">Статус</th>
                 <th width="7%">Управление</th>
             </tr>
             </thead>
@@ -18,6 +20,8 @@
                     <td class="text-center"></td>
                     <td><a href="{{url('admin/news/create')}}">Добавить новость</a></td>
                     <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
             @endif
             @foreach($news as $item)
@@ -25,6 +29,8 @@
                     <td>{{$item->id}}</td>
                     <td class="text-center">{{$item->created_at}}</td>
                     <td><a href="{{url('admin/news/'.$item->id.'/edit')}}">{{$item->title}}</a></td>
+                    <td>{{$item->user->name}}</td>
+                    <td>{{$item->status}}</td>
                     <td>
                         {!! Form::open(array('url' => 'admin/news/'.$item->id, 'method' => 'DELETE')) !!}
                         {{ Form::submit('Удалить', array('class' => 'btn btn-danger')) }}

@@ -4,6 +4,7 @@ namespace App;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use phpDocumentor\Reflection\Types\Null_;
 
 class News extends Model
 {
@@ -18,6 +19,11 @@ class News extends Model
     public function getCreatedAtAttribute($value)
     {
         return Carbon::parse($value)->format('d.m.Y H:i');
+    }
+
+    public function scopeStatus($query, $status = 'Published')
+    {
+        return $query->where('status','=', $status)->orderBy('id','desc');
     }
 
     public function scopeThreeNews($query, $id)

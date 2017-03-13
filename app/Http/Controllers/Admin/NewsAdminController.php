@@ -25,7 +25,7 @@ class NewsAdminController extends AdminController
 
     public function index()
     {
-        $news = News::orderBy('id','desc')->paginate(10);
+        $news = News::orderBy('id','desc')->with('user')->paginate(10);
 
         return view('admin.news.index', compact('news'));
     }
@@ -41,6 +41,7 @@ class NewsAdminController extends AdminController
         $news->description = $request->description;
         $news->text = $request->text;
         $news->user_id = $request->user()->id;
+        $news->status = (!empty($request->status)) ? $request->status : 'Draft';
         $news->save();
 
         return redirect('admin/news');
@@ -59,7 +60,7 @@ class NewsAdminController extends AdminController
         $news->title = $request->title;
         $news->description = $request->description;
         $news->text = $request->text;
-        $news->user_id = $request->user()->id;
+        $news->status = $request->status;
         $news->update();
 
         return redirect('admin/news');
