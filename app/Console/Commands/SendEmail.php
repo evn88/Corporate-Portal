@@ -46,9 +46,9 @@ class SendEmail extends Command //implements ShouldQueue
      */
     public function handle()
     {
-            $users = \App\News::all();
-            foreach ($users as $user){
-            Mail::raw('Новость: '.$user->title, function($message) {
+            $news = \App\News::all();
+            foreach ($news as $n){
+            Mail::raw('Новость: '.$n->title, function($message) {
                 $message->from('noreply@voel.ru', 'Laravel test');
                 $message->to('e.vershkov@voel.ru');
             });
