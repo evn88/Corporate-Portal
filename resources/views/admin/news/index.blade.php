@@ -7,8 +7,8 @@
             <tr>
                 <th width="1%">#</th>
                 <th width="13%" class="text-center">Дата публикации</th>
-                <th width="59%">Заголовок</th>
-                <th width="10%">Автор</th>
+                <th width="56%">Заголовок</th>
+                <th width="15%">Автор</th>
                 <th width="10%">Статус</th>
                 <th width="7%">Управление</th>
             </tr>
