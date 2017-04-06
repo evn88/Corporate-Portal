@@ -37,22 +37,32 @@
             <ul class="nav navbar-nav">
                 <li class="{{ Request::is('admin') ? 'active' : '' }}"><a href="{{ url('admin') }}">Главная</a></li>
                 <li class="{{ Request::is('admin/news') ? 'active' : '' }}"><a href="{{ url('admin/news') }}">Новости</a></li>
-                <li class="{{ Request::is('admin/users') ? 'active' : '' }}"><a href="{{ url('admin/users') }}">Пользователи</a></li>
-
+                @role(['root'])
+                    <li class="{{ Request::is('admin/users') ? 'active' : '' }}"><a href="{{ url('admin/users') }}">Пользователи</a></li>
+                @endrole
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Сервисы
                         <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="{{ url('fileshare') }}">Файлообменник</a></li>
-                        <li><a href="{{ url('phones') }}">Телефонный справочник</a></li>
-                        <li><a href="{{ url('conferences') }}">Конференции</a></li>
-                        <li><a href="{{ url('polls') }}">Опросы и голосования</a></li>
+                        <li><a href="{{ url('admin/fileshare') }}">Файлообменник</a></li>
+                        <li><a href="{{ url('admin/phones') }}">Телефонный справочник</a></li>
+                        <li><a href="{{ url('admin/conferences') }}">Конференции</a></li>
+                        <li><a href="{{ url('admin/polls') }}">Опросы и голосования</a></li>
                         <li class="divider"></li>
-                        <li><a href="{{ url('askue') }}">АСКУЭ</a></li>
-                        <li><a href="{{ url('wiki') }}">Wiki</a></li>
+                        <li><a href="{{ url('admin/askue') }}">АСКУЭ</a></li>
+                        <li><a href="{{ url('admin/wiki') }}">Wiki</a></li>
+                        <li><a href="{{ url('admin/keys') }}"><i class="fa fa-key" aria-hidden="true"></i> Журнал учета ключей(токенов)</a></li>
                     </ul>
                 </li>
-
+                @role(['root','administrator'])
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Управление серверами
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="{{ url('admin/servers/backups') }}">Backups</a></li>
+                    </ul>
+                </li>
+                @endrole
             </ul>
             <!------->
             <ul class="nav navbar-nav navbar-right">

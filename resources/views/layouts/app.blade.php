@@ -35,7 +35,7 @@
                 <li class="{{ Request::is('/') ? 'active' : '' }}"><a href="/"><i class="fa fa-home" aria-hidden="true"></i> Главная <span class="sr-only">(current)</span></a></li>
                 <li class="{{ Request::is('fileshare') ? 'active' : '' }}"><a href="{{ url('fileshare') }}"><i class="fa fa-cloud" aria-hidden="true"></i> Файлообменник</a></li>
                 <li class="{{ Request::is('phones') ? 'active' : '' }}"><a href="{{ url('phones') }}"><i class="fa fa-address-book" aria-hidden="true"></i> Телефонный справочник</a></li>
-                <li><a href="http://otrs.voenet.local/" target="_blank"><i class="fa fa-question" aria-hidden="true"></i> Техническая поддрежка</a></li>
+                <li><a href="http://otrs.voenet.local/otrs/" target="_blank"><i class="fa fa-question" aria-hidden="true"></i> Техническая поддрежка</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Сервисы <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
@@ -45,6 +45,7 @@
                         <li class="divider"></li>
                         <li><a href="{{ url('askue') }}"><i class="fa fa-plug" aria-hidden="true"></i> АСКУЭ</a></li>
                         <li><a href="{{ url('wiki') }}"><i class="fa fa-wikipedia-w" aria-hidden="true"></i> Wiki</a></li>
+                        <li><a href="{{ url('keys') }}"><i class="fa fa-key" aria-hidden="true"></i> Журнал учета ключей(токенов)</a></li>
                     </ul>
                 </li>
 
