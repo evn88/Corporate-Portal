@@ -23,7 +23,7 @@
         {!! Form::close() !!}
 
         @else
-            <div class="alert alert-info">
+            <div class="well">
                 <h4>Что-бы предложить свою новость Вы должны быть авторизованы!</h4>
                 <div class="form-group">
                     <a href="{{ url('login') }}" class="btn btn-default"> Авторизуйтесь</a> или <a href="{{ url('register') }}" class="btn btn-default"> зарегистрируйтесь</a>

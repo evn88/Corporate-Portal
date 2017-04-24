@@ -3,12 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Conference;
 
 class ConferencesController extends Controller
 {
+
     public function index()
     {
-        return view('conferences.index');
-        
+        $key = env('TRUECONF_KEY');
+        $url = "https://10.77.101.19/api/v2/conference";
+
+        $conference = new Conference;
+        $trueconf = $conference->getAllConference();
+
+        return view('conferences.index', compact('trueconf'));
     }
+
 }
