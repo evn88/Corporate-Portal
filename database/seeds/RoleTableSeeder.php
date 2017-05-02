@@ -28,6 +28,11 @@ class RoleTableSeeder extends Seeder
                 'description' => 'Роль для телефонистов'
             ],
             [
+                'name' => 'dispatcher',
+                'display_name' => 'Диспетчер',
+                'description' => 'Роль для диспетчеров'
+            ],
+            [
                 'name' => 'news',
                 'display_name' => 'Новости',
                 'description' => 'Для пользователей которые могут публиковать новости'
