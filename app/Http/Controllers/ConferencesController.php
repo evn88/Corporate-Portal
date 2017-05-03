@@ -15,7 +15,7 @@ class ConferencesController extends Controller
 
         $conference = new Conference;
         $trueconf = $conference->getAllConference();
-
+        dd($trueconf);
         return view('conferences.index', compact('trueconf'));
     }
 
