@@ -24,17 +24,53 @@
         <h3>Отдел информационных технологий</h3>
         <ul class="phones-container">
             <li>
-                <div class="avatar">
-                    <img src="/img/user.png" align="left">
+                <div class="phones-blue-box">
+                    <div class="phones-avatar">
+                        <img src="/img/user.png" align="left">
+                    </div>
+                    <h4>Вершков Егор Николаевич</h4>
                 </div>
-                <h4>Вершков Е.Н.</h4>
-                <p>Администратор безопасности</p>
-                <p>
-                    <i class="fa fa-phone" aria-hidden="true"></i> 
-                    <strong>1034</strong>
-                </p>
+                <div class="phones-description"
+                    <p>Администратор безопасности информационных технологий</p>
+                    <p>
+                        <i class="fa fa-phone" aria-hidden="true"></i> 
+                        <strong>1034</strong>
+                    </p>
+                </div>
             </li>
             
+            <li>
+                <div class="phones-blue-box">
+                    <div class="phones-avatar">
+                        <img src="/img/user.png" align="left">
+                    </div>
+                    <h4>Костомаха Дмитрий Александрович</h4>
+                </div>
+                <div class="phones-description"
+                    <p>Ведущий инженер-программист</p>
+                    <p>
+                        <i class="fa fa-phone" aria-hidden="true"></i> 
+                        <strong>1034</strong>
+                    </p>
+                </div>
+            </li>
+
+             <li>
+                <div class="phones-blue-box">
+                    <div class="phones-avatar">
+                        <img src="/img/user.png" align="left">
+                    </div>
+                    <h4>Сказкоподателев Сергей Александрович</h4>
+                </div>
+                <div class="phones-description"
+                    <p>Начальник э/технической лаборатории</p>
+                    <p>
+                        <i class="fa fa-phone" aria-hidden="true"></i> 
+                        <strong>1034</strong>
+                    </p>
+                </div>
+            </li>
+
             <li>2</li>
             <li>3</li>
             <li>4</li>
