@@ -28,14 +28,16 @@
                     <div class="phones-avatar">
                         <img src="/img/user.png" align="left">
                     </div>
-                    <h4>Вершков Егор Николаевич</h4>
+                    <h4>Вершков </h4>
+                    <span class="small">Егор Николаевич</span>
+                    
                 </div>
-                <div class="phones-description"
+                <div class="phones-description">
                     <p>Администратор безопасности информационных технологий</p>
-                    <p>
-                        <i class="fa fa-phone" aria-hidden="true"></i> 
-                        <strong>1034</strong>
-                    </p>
+                        <i class="fa fa-phone fa-2x"></i> 
+                        <span class="strong">1034</span>
+                        <i class="fa fa-phone-square fa-2x"></i>
+                        <span class="strong">56-20-74</span>
                 </div>
             </li>
             
@@ -44,43 +46,108 @@
                     <div class="phones-avatar">
                         <img src="/img/user.png" align="left">
                     </div>
-                    <h4>Костомаха Дмитрий Александрович</h4>
+                    <h4>Сказкоподателев </h4>
+                    <span class="small">Сергей Александрович </span>
+                    
                 </div>
-                <div class="phones-description"
-                    <p>Ведущий инженер-программист</p>
-                    <p>
-                        <i class="fa fa-phone" aria-hidden="true"></i> 
-                        <strong>1034</strong>
-                    </p>
+                <div class="phones-description">
+                    <p>Человек с очень длинной профессией которую только можно придумать</p>
+                        <i class="fa fa-phone fa-2x"></i> 
+                        <span class="strong">1034</span>
+                        <i class="fa fa-phone-square fa-2x"></i>
+                        <span class="strong">56-20-74</span>
                 </div>
             </li>
 
-             <li>
+            <li>
                 <div class="phones-blue-box">
                     <div class="phones-avatar">
                         <img src="/img/user.png" align="left">
                     </div>
-                    <h4>Сказкоподателев Сергей Александрович</h4>
+                    <h4>Вершков </h4>
+                    <span class="small">Егор Николаевич</span>
+                    
                 </div>
-                <div class="phones-description"
-                    <p>Начальник э/технической лаборатории</p>
-                    <p>
-                        <i class="fa fa-phone" aria-hidden="true"></i> 
-                        <strong>1034</strong>
-                    </p>
+                <div class="phones-description">
+                    <p>Администратор безопасности информационных технологий</p>
+                        <i class="fa fa-phone fa-2x"></i> 
+                        <span class="strong">1034</span>
+                        <i class="fa fa-phone-square fa-2x"></i>
+                        <span class="strong">56-20-74</span>
                 </div>
             </li>
 
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-            <li>6</li>
-            <li>7</li>
-            <li>8</li>
-            <li>9</li>
-            <li>10</li>
-            <li>11</li>
+            <li>
+                <div class="phones-blue-box">
+                    <div class="phones-avatar">
+                        <img src="/img/user.png" align="left">
+                    </div>
+                    <h4>Вершков </h4>
+                    <span class="small">Егор Николаевич</span>
+                    
+                </div>
+                <div class="phones-description">
+                    <p>Администратор безопасности информационных технологий</p>
+                        <i class="fa fa-phone fa-2x"></i> 
+                        <span class="strong">1034</span>
+                        <i class="fa fa-phone-square fa-2x"></i>
+                        <span class="strong">56-20-74</span>
+                </div>
+            </li>
+
+            <li>
+                <div class="phones-blue-box">
+                    <div class="phones-avatar">
+                        <img src="/img/user.png" align="left">
+                    </div>
+                    <h4>Вершков </h4>
+                    <span class="small">Егор Николаевич</span>
+                    
+                </div>
+                <div class="phones-description">
+                    <p>Администратор безопасности информационных технологий</p>
+                        <i class="fa fa-phone fa-2x"></i> 
+                        <span class="strong">1034</span>
+                        <i class="fa fa-phone-square fa-2x"></i>
+                        <span class="strong">56-20-74</span>
+                </div>
+            </li>
+
+            <li>
+                <div class="phones-blue-box">
+                    <div class="phones-avatar">
+                        <img src="/img/user.png" align="left">
+                    </div>
+                    <h4>Вершков </h4>
+                    <span class="small">Егор Николаевич</span>
+                    
+                </div>
+                <div class="phones-description">
+                    <p>Администратор безопасности информационных технологий</p>
+                        <i class="fa fa-phone fa-2x"></i> 
+                        <span class="strong">1034</span>
+                        <i class="fa fa-phone-square fa-2x"></i>
+                        <span class="strong">56-20-74</span>
+                </div>
+            </li>
+
+            <li>
+                <div class="phones-blue-box">
+                    <div class="phones-avatar">
+                        <img src="/img/user.png" align="left">
+                    </div>
+                    <h4>Вершков </h4>
+                    <span class="small">Егор Николаевич</span>
+                    
+                </div>
+                <div class="phones-description">
+                    <p>Администратор безопасности информационных технологий</p>
+                        <i class="fa fa-phone fa-2x"></i> 
+                        <span class="strong">1034</span>
+                        <i class="fa fa-phone-square fa-2x"></i>
+                        <span class="strong">56-20-74</span>
+                </div>
+            </li>
         </ul>
     </div>
 
