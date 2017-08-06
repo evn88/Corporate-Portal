@@ -21,9 +21,9 @@
 
 <div class="flex-container">
     <div class="flex-group">
-        <h3>Отдел информационных технологий</h3>
+        <h3>Отдел информационных технологий <small>Код: 8442 | Волгоград, ул.Шопена 13</small></h3>
         <ul class="phones-container">
-            <li>
+            <li class="panel panel-default">
                 <div class="phones-blue-box">
                     <div class="phones-avatar">
                         <img src="/img/user.png" align="left">
@@ -38,10 +38,11 @@
                         <span class="strong">1034</span>
                         <i class="fa fa-phone-square fa-2x"></i>
                         <span class="strong">56-20-74</span>
+                        <a class=""><i class="fa fa-address-card fa-2x" aria-hidden="true"></i></a>
                 </div>
             </li>
             
-            <li>
+            <li class="panel">
                 <div class="phones-blue-box">
                     <div class="phones-avatar">
                         <img src="/img/user.png" align="left">
@@ -59,7 +60,24 @@
                 </div>
             </li>
 
-            <li>
+            <li class="panel">
+                <div class="phones-blue-box">
+                    <div class="phones-avatar">
+                        <img src="/img/user.png" align="left">
+                    </div>
+                    <h4>Вершков </h4>
+                    <span class="small">Егор Николаевич</span>
+                    
+                </div>
+                <div class="phones-description">
+                    <p>Администратор безопасности информационных технологий</p>
+                        <i class="fa fa-phone fa-2x"></i> 
+                        <span class="strong">1034</span>
+
+                </div>
+            </li>
+
+            <li class="panel">
                 <div class="phones-blue-box">
                     <div class="phones-avatar">
                         <img src="/img/user.png" align="left">
@@ -77,7 +95,7 @@
                 </div>
             </li>
 
-            <li>
+            <li class="panel">
                 <div class="phones-blue-box">
                     <div class="phones-avatar">
                         <img src="/img/user.png" align="left">
@@ -95,7 +113,7 @@
                 </div>
             </li>
 
-            <li>
+            <li class="panel">
                 <div class="phones-blue-box">
                     <div class="phones-avatar">
                         <img src="/img/user.png" align="left">
@@ -113,25 +131,7 @@
                 </div>
             </li>
 
-            <li>
-                <div class="phones-blue-box">
-                    <div class="phones-avatar">
-                        <img src="/img/user.png" align="left">
-                    </div>
-                    <h4>Вершков </h4>
-                    <span class="small">Егор Николаевич</span>
-                    
-                </div>
-                <div class="phones-description">
-                    <p>Администратор безопасности информационных технологий</p>
-                        <i class="fa fa-phone fa-2x"></i> 
-                        <span class="strong">1034</span>
-                        <i class="fa fa-phone-square fa-2x"></i>
-                        <span class="strong">56-20-74</span>
-                </div>
-            </li>
-
-            <li>
+            <li class="panel">
                 <div class="phones-blue-box">
                     <div class="phones-avatar">
                         <img src="/img/user.png" align="left">
@@ -154,10 +154,10 @@
     <div class="flex-group">
         <h3>Название группы</h3>
         <ul class="phones-container">
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
+            <li class="panel">1</li>
+            <li class="panel">2</li>
+            <li class="panel">3</li>
+            <li class="panel">4</li>
         </ul>
     </div>
 </div>

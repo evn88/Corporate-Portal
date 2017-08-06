@@ -7,13 +7,14 @@
     width: 100%;
     /*padding: 5px;*/
     margin: 5px;
-    background: #ebebeb;
+    background: #f7f8f9;
     border-radius: 5px;
 }
 .flex-group h3 {
     padding-left: 10px;
     color: gray;
 }
+
 
 
 .phones-container {
@@ -32,11 +33,12 @@
 .phones-container li {
     flex-grow: 1;
     flex-basis: 307px;
-    max-width: 380px;
+    max-width: 365px;
+    min-width: 307px;
     height: 200px;
     padding: 0; 
     background: white;
-    margin: 2px;
+    margin: 6px;
     border: 1px solid #e7e7e7;
     border-radius: 5px;
     list-style-type: none;
@@ -48,21 +50,16 @@
     padding: 5px;
     border-radius: 5px 5px 0 0;
     background-color: #4fa4c0;
+    border-bottom: 4px solid #97d8ed;
+    /*background-color: #1ece7c;*/
 }
 
 .phones-blue-box h4 {
 color: white;
 text-transform: uppercase;
-margin-top: 7px;
+margin-top: 12px;
 margin-bottom: 0;
-font-size: 17pt;
-}
-
-.small {
-margin: 0;
 font-size: 14pt;
-color: white;
-text-transform: uppercase;
 }
 
 .phones-avatar img {
@@ -75,6 +72,13 @@ text-transform: uppercase;
 
 .phones-description {
     margin: 10px;
+}
+
+.small {
+margin: 0;
+font-size: 12pt;
+color: white;
+text-transform: uppercase;
 }
 
 .strong {

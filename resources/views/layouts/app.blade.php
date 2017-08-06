@@ -91,12 +91,12 @@
     </div>
 </nav>
 
-
+<div id="app"></div>
 @yield('content')
 
 
-<script src="{{ url('/js/jquery-2.1.1.min.js') }}"></script>
-<script src="{{ url('/js/bootstrap.min.js') }}"></script>
+<!--<script src="{{ url('/js/jquery-2.1.1.min.js') }}"></script>-->
+<!--<script src="{{ url('/js/bootstrap.min.js') }}"></script>-->
 <!-- Compiled and minified JavaScript -->
 <script src="{{ url('/js/app.js') }}"></script>
 </body>
