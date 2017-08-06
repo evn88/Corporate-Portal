@@ -91,7 +91,9 @@
     </div>
 </nav>
 
-<div id="app"></div>
+<div id="app">
+        <example></example>
+    </div>
 @yield('content')
 
 
