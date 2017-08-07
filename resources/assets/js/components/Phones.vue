@@ -18,7 +18,6 @@
 let phones = require('../phones.js')
 
     export default {
-        data: ['test'],
         mounted() {
             console.log('Component ready.')
         }
