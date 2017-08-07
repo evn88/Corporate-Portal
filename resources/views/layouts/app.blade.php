@@ -92,10 +92,8 @@
 </nav>
 
 <div id="app">
-        <example></example>
-    </div>
-@yield('content')
-
+    @yield('content')
+</div>
 
 <!--<script src="{{ url('/js/jquery-2.1.1.min.js') }}"></script>-->
 <!--<script src="{{ url('/js/bootstrap.min.js') }}"></script>-->

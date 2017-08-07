@@ -18,7 +18,9 @@
         </div>
     </form>
     </div>
-
+    
+ <example></example>
+<phones></phones>
 <div class="flex-container">
     <div class="flex-group">
         <h3>Отдел информационных технологий <small>Код: 8442 | Волгоград, ул.Шопена 13</small></h3>
