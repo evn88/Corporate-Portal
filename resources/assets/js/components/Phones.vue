@@ -6,7 +6,9 @@
                     <div class="panel-heading">Phones Component</div>
 
                     <div class="panel-body">
-                        I'm an example component!
+                        {{message}}
+                        <ul>
+                            
                     </div>
                 </div>
             </div>
@@ -20,6 +22,9 @@ let phones = require('../phones.js')
     export default {
         mounted() {
             console.log('Component ready.')
+        },
+        data: function () {
+            return { message: phones }
         }
     }
 </script>
