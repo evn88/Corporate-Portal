@@ -86,10 +86,10 @@ text-transform: uppercase;
     margin-right: 20px;
 }
 
-p {
-    margin: 0;
+.phones-description p {
+     margin: 0;
+     height: 50px;
 }
-
 
 .phones-description i {
     color: #4fa4c0;
