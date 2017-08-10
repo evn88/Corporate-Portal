@@ -6,7 +6,7 @@
 
     <h1>Телефонный справочник</h1>
     <div class="form-group">
-    <form class="ng-pristine ng-valid" role="search" >
+    <form class="ng-pristine ng-valid" role="search" v-on:submit.prevent="onSubmit">
         <div class="form-group" style="display:inline;">
             <div class="input-group" style="display:table;">
                 <span class="input-group-addon" style="width:1%;">
