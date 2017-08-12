@@ -1,8 +1,8 @@
 <template>
 <div class="flex-group">
-        <h3>Отдел информационных технологий <small>Код: 8442 | Волгоград, ул.Шопена 13</small></h3>
+        <h3>Отдел информационных технологий <small>Код: 8442 | Волгоград, ул.Шопена 13 {{searchQuery}}</small></h3>
     <ul  class="phones-container">
-        <li class="panel panel-default" v-for="phone in filteredPhones" :key="phone.id">
+        <li class="panel panel-default" v-for="phone in filteredPhones">
             <div class="phones-blue-box">
                 <div class="phones-avatar">
                     <img :src="phone.photo" align="left">
@@ -28,13 +28,10 @@
 let data = require('../phones.js')
 
     export default {
-        mounted() {
-            //console.log(this.phones)
-        },
+        props: ['filterKey'],
         data: function () {
             return { 
-                search: '',
-                phones: data 
+                phones: data
             }
         },
         computed:
@@ -43,9 +40,10 @@ let data = require('../phones.js')
             {
                 var self=this;
                 return this.phones.filter(function(p){
-                    return p.lastname.toLowerCase().indexOf(self.search.toLowerCase())>=0;
+                    return p.lastname.toLowerCase().indexOf(self.filterKey.toLowerCase())>=0;
                 });
             }
         }
+       
     }
 </script>

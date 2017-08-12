@@ -6,22 +6,27 @@
 
     <h1>Телефонный справочник</h1>
     <div class="form-group">
-    <form class="ng-pristine ng-valid" role="search" v-on:submit.prevent="onSubmit">
-        <div class="form-group" style="display:inline;">
-            <div class="input-group" style="display:table;">
-                <span class="input-group-addon" style="width:1%;">
-                    <i class="fa fa-search"></i>
-                </span>
-                <input class="form-control ng-pristine ng-valid ng-empty ng-touched" id="search" role="search" name="search" 
-                placeholder="Поиск по фамилии, имени, номеру телефона, филиалу, отделу" autocomplete="off" autofocus="autofocus" type="text" 
-                v-model="search"
-                >
-            </div>
-        </div>
-    </form>
+        <form v-on:submit.prevent="">
+            <div class="form-group" style="display:inline;">
+                <div class="input-group" style="display:table;">
+                    <span class="input-group-addon" style="width:1%;">
+                        <i class="fa fa-search"></i>
+                    </span>
+                    <input 
+                        class="form-control" 
+                        placeholder="Поиск по фамилии, имени, номеру телефона, филиалу, отделу" autocomplete="off" autofocus="autofocus" 
+                        type="text" 
+                        v-model="searchQuery"
+                    >
+                </div>
+            </div>    
+        </form>
     </div>
     
-    <phones class="flex-container"></phones>
+ 
+    <phones class="flex-container" :filter-key="searchQuery"></phones>
+
+    <phones class="flex-container" :filter-key="searchQuery"></phones>
 
     <div class="flex-group">
         <h3>Название группы</h3>
