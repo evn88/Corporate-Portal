@@ -44,7 +44,7 @@ module.exports = [
         firstname: 'Александр',
         secondname: 'Николаевич',
         profession: 'Зам. генерального директора по капитальному строительству и общим вопросам',
-        filial: 'Волгоград',
+        filial: 'Пригородные МЭС',
         int_phone: '1007',
         ext_phone: '48-14-27',
         s_phone: '',

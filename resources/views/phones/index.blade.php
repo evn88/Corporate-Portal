@@ -28,16 +28,6 @@
 
     <phones class="flex-container" :filter-key="searchQuery"></phones>
 
-    <div class="flex-group">
-        <h3>Название группы</h3>
-        <ul class="phones-container">
-            <li class="panel">1</li>
-            <li class="panel">2</li>
-            <li class="panel">3</li>
-            <li class="panel">4</li>
-        </ul>
-    </div>
-
 </div>
 
 @endsection

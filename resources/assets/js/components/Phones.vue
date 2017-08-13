@@ -17,7 +17,6 @@
                 <span class="strong">{{phone.int_phone}}</span>
                 <i class="fa fa-phone-square fa-2x"></i>
                 <span class="strong">{{phone.ext_phone}}</span>
-                <a class=""><i class="fa fa-address-card fa-2x" aria-hidden="true"></i></a>
             </div>
         </li>
     </ul>
@@ -40,7 +39,9 @@ let data = require('../phones.js')
             {
                 var self=this;
                 return this.phones.filter(function(p){
+                   /* console.log(self.filterKey);*/
                     return p.lastname.toLowerCase().indexOf(self.filterKey.toLowerCase())>=0;
+
                 });
             }
         }

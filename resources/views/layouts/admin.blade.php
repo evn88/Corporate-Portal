@@ -7,9 +7,9 @@
 
     <title>Админка</title>
     <link rel="stylesheet" href="{{ url('css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ url('css/app.css') }}">
-    <link rel="stylesheet" href="{{ url('css/fileshare.css') }}">
     <link rel="stylesheet" href="{{ url('lib/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ url('css/fileshare.css') }}">
+    <link rel="stylesheet" href="{{ url('css/app.css') }}">
     <!-- Scripts -->
     <script>
         window.Laravel =<?= json_encode([
@@ -76,7 +76,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                            aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ url('/admin/profile') }}" class="white-text">Настройки профиля</a></li>
+                            <li><a href="{{ url('/profile') }}" class="white-text">Настройки профиля</a></li>
 
                             <li>
                                 <a href="{{ url('/logout') }}" class="white-text"
@@ -98,14 +98,13 @@
     </div>
 </nav>
 
-
+<div id="app">
 @yield('content')
+</div>
 
 
-<script src="{{ url('js/jquery-2.1.1.min.js') }}"></script>
-<script src="{{ url('js/bootstrap.min.js') }}"></script>
-<script src="{{ url('js/app.js') }}"></script>
-<script src="{{ url('vendor/unisharp/laravel-ckeditor/ckeditor.js')}}"></script>
+<script src="{{ url('/vendor/unisharp/laravel-ckeditor/ckeditor.js')}}"></script>
+<script src="{{ url('/js/app.js') }}"></script>
 @yield('footer')
 </body>
 </html>

@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+
     <div class="container">
         <h1>Предложить новость </h1>
         @if(Auth::check())
@@ -36,11 +37,13 @@
         @endif
     </div>
 
-    <script src="{{ url('/vendor/unisharp/laravel-ckeditor/ckeditor.js')}}"></script>
+    
+    @section('footer')
     <script>
         CKEDITOR.replace('ckeditor', {
             customConfig: '/lib/ckeditor/ckeditor_config.js'
         });
         CKEDITOR.dtd.$removeEmpty['span'] = false;
     </script>
+    @endsection
 @endsection
