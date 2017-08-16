@@ -21,6 +21,8 @@ const app = new Vue({
     data: {
         searchQuery: '',
         filialSelected: '',
+        groupSelected: '',
+        showBirthday: '',
         showSettings: JSON.parse(localStorage.getItem('showSettings')),
         allSettings: { 
             filialSelected: this.filialSelected,

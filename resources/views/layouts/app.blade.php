@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="{{ url('/css/fileshare.css') }}">
     <link rel="stylesheet" href="{{ url('/lib/font-awesome-4.7.0/css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ url('/css/app.css') }}">
-
     <link rel="stylesheet" href="/css/@yield('css', 'app').css">
     <!-- Scripts -->
     <script>

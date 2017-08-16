@@ -11,10 +11,13 @@
 
             <div class="phones-description">
                 <p>{{phone.profession}}</p>
-                <i class="fa fa-phone fa-2x"></i> 
-                <span class="strong">{{phone.int_phone}}</span>
-                <i class="fa fa-phone-square fa-2x"></i>
-                <span class="strong">{{phone.ext_phone}}</span>
+                <div class="phones-numbers">
+                    <i class="fa fa-phone fa-2x"></i> 
+                    <span class="strong">{{phone.int_phone}}</span>
+                    <i class="fa fa-phone-square fa-2x"></i>
+                    <span class="strong">{{phone.ext_phone}}</span>
+                    <button class="btn btn-default pull-right"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
+                </div>
             </div>
         </li>
     </ul>

@@ -7,6 +7,7 @@
     width: 100%;
     /*padding: 5px;*/
     margin: 5px;
+    margin-bottom: 10px;
     background: rgb(251, 251, 251);
     border: 1px solid #ececec;
     border-radius: 5px;
@@ -51,7 +52,7 @@
     padding: 5px;
     border-radius: 5px 5px 0 0;
     background-color: #3572a2;
-    border-bottom: 4px solid #2196f3;
+    border-bottom: 4px solid #009af5;
     /*background-color: #1ece7c;*/
 }
 
@@ -66,7 +67,7 @@ font-size: 14pt;
 .phones-avatar img {
     width: 48px;
     height: 48px;
-    border: 1px solid #fff;
+    /*border: 1px solid #91BCD8;*/
     border-radius: 50%;
     margin: 10px;
 }
@@ -75,27 +76,32 @@ font-size: 14pt;
     margin: 10px;
 }
 
-.small {
-margin: 0;
-font-size: 12pt;
-color: white;
-text-transform: uppercase;
-}
-
-.strong {
-    font-size: 20pt;
-    margin-right: 20px;
-}
-
 .phones-description p {
      margin: 0;
      height: 50px;
 }
 
 .phones-description i {
-    color: #4fa4c0;
+    color: #3572a2;
 }
 
+.phones-numbers {
+    height: 35px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.small {
+    margin: 0;
+    font-size: 12pt;
+    color: white;
+    text-transform: uppercase;
+    }
+    
+.strong {
+    font-size: 20pt;
+    margin-right: 20px;
+}
 
 .fade-enter-active, .fade-leave-active {
     transition: opacity .2s

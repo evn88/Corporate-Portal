@@ -9,7 +9,7 @@ module.exports = [
         int_phone: '1084',
         ext_phone: '56-20-77',
         s_phone: '*163#',
-        photo:'/img/avatars/user.png',
+        photo:'/img/avatars/1.jpg',
         sort: '500'
     },
     {

@@ -8,16 +8,23 @@
         <form v-on:submit.prevent="">
             <div class="input-group" style="display:table;">
                 <span class="input-group-addon" style="width:1%;">
-                    <i class="fa fa-search"></i>
+                    <i class="fa fa-search fa-2x"></i>
                 </span>
                 <input 
                     class="form-control" 
-                    placeholder="Поиск по фамилии, имени, номеру телефона, филиалу, отделу" autocomplete="off" autofocus="autofocus" 
+                    placeholder="Поиск по фамилии, имени, номеру телефона, профессии" autocomplete="off" autofocus="autofocus" 
                     type="text" 
                     v-model="searchQuery"
                 >
                 <span class="input-group-addon" style="width:1%;">
-                    <button class="btn btn-default pull-right" @click="changeShowSettings()"><i class="fa fa-sliders" aria-hidden="true"></i></button>
+                    <button 
+                    type="button"
+                    class="btn btn-default pull-right" 
+                    @click="changeShowSettings()" 
+                    data-toggle="tooltip" 
+                    data-placement="top" 
+                    data-original-title="Параметры поиска"
+                    ><i class="fa fa-sliders" aria-hidden="true"></i></button>
                 </span>
             </div>
         </form>
@@ -31,8 +38,7 @@
             <div class="panel-body">
                 <div class="form-group" >
                     <div class="col-lg-4">
-                        <label for="filial">Показывать: </label>
-                        <select name="filial" v-model="filialSelected">
+                        <select name="filial" v-model="filialSelected" class="form-control">
                             <option value="">Все филиалы</option>
                             <option value="ЦРПБ">Волгоград</option>
                             <option value="Пригородные МЭС">Пригородные МЭС</option>
@@ -40,21 +46,33 @@
                             <option value="Жирновские МЭС">Жирновские МЭС</option>
                         </select>
                     </div>
-                    <div class="col-lg-2">
-                        <input type="text" name="param1" id="">
+                    <div class="col-lg-4">
+                        <select name="group" v-model="groupSelected" class="form-control">
+                            <option value="">Все группы</option>
+                            <option value="Отдел информационных технологий">Отдел информационных технологий</option>
+                            <option value="Отдел кадров">Отдел кадров</option>
+                        </select>
                     </div>
-                    <div class="col-lg-3">
-                        <input type="text" name="param2" id="">
-                    </div>
-                    <div class="col-lg-3">  
-                        <input type="text" name="param3" id="">
+                    <div class="col-lg-4">
+                        <div class="checkbox">
+                          <label>
+                            <input type="checkbox" v-model="showBirthday"> Показывать дни рождения
+                          </label>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </transition>
     
-    <filials :filter-key="searchQuery" :filial-selected="filialSelected">Загрузка...</filials>
+    <filials 
+    :filter-key="searchQuery" 
+    :filial-selected="filialSelected"
+    :group-selected="groupSelected"
+    >
+        <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+        <span class="sr-only">Загрузка...</span>
+    </filials>
 
 </div>
 

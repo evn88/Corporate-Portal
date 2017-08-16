@@ -4,14 +4,14 @@
       <h2>
           {{filial.name}} <small>{{filial.address}}</small>
       </h2> 
-      <groups :filter-key="filterKey"></groups>
+      <groups :filter-key="filterKey" :group-selected="groupSelected"></groups>
     </div>
 </div>
 </template>
 
 <script>
     export default {
-        props: ['filterKey','filialSelected'],
+        props: ['filterKey','filialSelected','groupSelected'],
         data: function(){
             return {
                 filials: [
