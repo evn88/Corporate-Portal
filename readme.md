@@ -11,12 +11,12 @@
 
 ## Install
 
-create file .env
-run composer install
-add db portal
-php artisan migrate
-npm install gulp -g
-run gulp
+- create file .env
+- run composer install
+- add db portal
+- php artisan migrate
+- npm install gulp -g
+- run gulp
 
 ## Contributing
 
