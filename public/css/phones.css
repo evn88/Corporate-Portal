@@ -94,3 +94,11 @@ text-transform: uppercase;
 .phones-description i {
     color: #4fa4c0;
 }
+
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .2s
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+    opacity: 0
+  }

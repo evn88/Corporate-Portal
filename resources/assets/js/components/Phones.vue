@@ -1,8 +1,8 @@
 <template>
 <div class="flex-group">
-        <h3>Отдел информационных технологий <small>Код: 8442 | Волгоград, ул.Шопена 13 {{searchQuery}}</small></h3>
+        <h3>Отдел информационных технологий </h3>
     <ul  class="phones-container">
-        <li class="panel panel-default" v-for="phone in filteredPhones">
+        <li class="panel panel-default" v-for="phone in filteredPhones" v-bind:key="phone.id">
             <div class="phones-blue-box">
                 <div class="phones-avatar">
                     <img :src="phone.photo" align="left">
@@ -39,9 +39,15 @@ let data = require('../phones.js')
             {
                 var self=this;
                 return this.phones.filter(function(p){
-                   /* console.log(self.filterKey);*/
-                    return p.lastname.toLowerCase().indexOf(self.filterKey.toLowerCase())>=0;
-
+                    if (
+                        p.lastname.toLowerCase().indexOf(self.filterKey.toLowerCase())>=0 
+                        || p.firstname.toLowerCase().indexOf(self.filterKey.toLowerCase())>=0
+                        || p.secondname.toLowerCase().indexOf(self.filterKey.toLowerCase())>=0
+                        || p.int_phone.indexOf(self.filterKey.toLowerCase())>=0
+                        || p.profession.toLowerCase().indexOf(self.filterKey.toLowerCase())>=0
+                    ){
+                        return true
+                    }
                 });
             }
         }

@@ -13,11 +13,17 @@ require('./bootstrap');
  * the application, or feel free to tweak this setup for your needs.
  */
 Vue.component('phones', require('./components/Phones.vue'));
-Vue.component('example', require('./components/Example.vue'));
 
 const app = new Vue({
     el: '#app',
     data: {
-        searchQuery: ''
+        searchQuery: '',
+        showSettings: JSON.parse(localStorage.getItem('showSettings')),
     },
+    methods: {
+        changeShowSettings: function(){
+           this.showSettings = !this.showSettings
+           localStorage.setItem('showSettings', this.showSettings)
+        }
+    }
 });
