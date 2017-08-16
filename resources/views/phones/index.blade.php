@@ -54,13 +54,10 @@
         </div>
     </transition>
     
+    <filials :filter-key="searchQuery">Загрузка...</filials>
+
     
-    <h2>Волгоград <small>Код: (8442) | Адресс: 400075, г. Волгоград, ул. Шопена, 13 </small></h2> 
-    <phones class="flex-container" :filter-key="searchQuery">загрузка...</phones>
-
-    <h2>Пригородные МЭС <small>Код: (84468) | Адресс: 403001, р.п. Городище, ул. 8-го Гвардейского Танкового корпуса, 22Б </small></h2>
-    <phones class="flex-container" :filter-key="searchQuery">загрузка...</phones>
-
+   
 </div>
 
 @endsection

@@ -1,8 +1,6 @@
 <template>
-<div class="flex-group">
-        <h3>Отдел информационных технологий </h3>
     <ul  class="phones-container">
-        <li class="panel panel-default" v-for="phone in filteredPhones" v-bind:key="phone.id">
+        <li class="panel panel-default" v-for="phone in phones" v-bind:key="phone.id">
             <div class="phones-blue-box">
                 <div class="phones-avatar">
                     <img :src="phone.photo" align="left">
@@ -20,7 +18,6 @@
             </div>
         </li>
     </ul>
-</div>
 </template>
 
 <script>
@@ -38,6 +35,7 @@ let data = require('../phones.js')
             filteredPhones:function()
             {
                 var self=this;
+                console.log(this)
                 return this.phones.filter(function(p){
                     if (
                         p.lastname.toLowerCase().indexOf(self.filterKey.toLowerCase())>=0 

@@ -12,6 +12,8 @@ require('./bootstrap');
  * the body of the page. From here, you may begin adding components to
  * the application, or feel free to tweak this setup for your needs.
  */
+Vue.component('filials', require('./components/Filials.vue'));
+Vue.component('groups', require('./components/Groups.vue'));
 Vue.component('phones', require('./components/Phones.vue'));
 
 const app = new Vue({
