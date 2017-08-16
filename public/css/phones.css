@@ -7,7 +7,8 @@
     width: 100%;
     /*padding: 5px;*/
     margin: 5px;
-    background: #f7f8f9;
+    background: rgb(251, 251, 251);
+    border: 1px solid #ececec;
     border-radius: 5px;
 }
 .flex-group h3 {
@@ -49,8 +50,8 @@
     height: 80px;
     padding: 5px;
     border-radius: 5px 5px 0 0;
-    background-color: #4fa4c0;
-    border-bottom: 4px solid #97d8ed;
+    background-color: #3572a2;
+    border-bottom: 4px solid #2196f3;
     /*background-color: #1ece7c;*/
 }
 
