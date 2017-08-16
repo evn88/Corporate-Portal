@@ -30,17 +30,17 @@
         </div>
             <div class="panel-body">
                 <div class="form-group" >
-                    <div class="col-lg-3">
+                    <div class="col-lg-4">
                         <label for="filial">Показывать: </label>
-                        <select name="filial" id="">
-                            <option value="ВСЕ">Все филиалы</option>
-                            <option value="Волгоград">Волгоград</option>
+                        <select name="filial" v-model="filialSelected">
+                            <option value="">Все филиалы</option>
+                            <option value="ЦРПБ">Волгоград</option>
                             <option value="Пригородные МЭС">Пригородные МЭС</option>
                             <option value="Камышинские МЭС">Камышинские МЭС</option>
                             <option value="Жирновские МЭС">Жирновские МЭС</option>
                         </select>
                     </div>
-                    <div class="col-lg-3">
+                    <div class="col-lg-2">
                         <input type="text" name="param1" id="">
                     </div>
                     <div class="col-lg-3">
@@ -54,10 +54,8 @@
         </div>
     </transition>
     
-    <filials :filter-key="searchQuery">Загрузка...</filials>
+    <filials :filter-key="searchQuery" :filial-selected="filialSelected">Загрузка...</filials>
 
-    
-   
 </div>
 
 @endsection

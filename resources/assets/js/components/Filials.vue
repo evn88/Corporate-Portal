@@ -1,6 +1,6 @@
 <template>
 <div>
-    <div class="filials" v-for="filial in filials" v-bind:key="filial.id">
+    <div class="filials" v-for="filial in filteredFilials" v-bind:key="filial.id">
       <h2>
           {{filial.name}} <small>{{filial.address}}</small>
       </h2> 
@@ -10,9 +10,8 @@
 </template>
 
 <script>
-//import phones from './Phones.vue'
     export default {
-        props: ['filterKey'],
+        props: ['filterKey','filialSelected'],
         data: function(){
             return {
                 filials: [
@@ -34,7 +33,7 @@
                 var self=this;
                 return this.filials.filter(function(p){
                     if (
-                        p.name.toLowerCase().indexOf(self.filterKey.toLowerCase())>=0 
+                        p.name.toLowerCase().indexOf(self.filialSelected.toLowerCase())>=0 
                     ){
                         return true
                     }
