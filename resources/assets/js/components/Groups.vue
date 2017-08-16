@@ -2,7 +2,7 @@
 <div>
     <div class="flex-group" v-for="group in groups" v-bind:key="group.id">
         <h3>{{group.name}}</h3>
-        <phones class="flex-container" :filter-key="searchQuery">загрузка...</phones>
+        <phones class="flex-container" :filter-key="filterKey">загрузка...</phones>
     </div>
 </div>
 </template>

@@ -4,7 +4,7 @@
       <h2>
           {{filial.name}} <small>{{filial.address}}</small>
       </h2> 
-      <groups :filter-key="searchQuery"></groups>
+      <groups :filter-key="filterKey"></groups>
     </div>
 </div>
 </template>
@@ -24,11 +24,22 @@
                     { id:5, name: 'Суровикинские МЭС', address: '40075, г. Волгоград, ул Шопена 13'},
                     { id:6, name: 'Северные МЭС', address: '40075, г. Волгоград, ул Шопена 13'},
                     { id:7, name: 'Заволжские МЭС', address: '40075, г. Волгоград, ул Шопена 13'},
-                ]
+                ],
             }
         },
-        created: function(){
-            console.log(this.filterKey)
+        computed:
+        {
+            filteredFilials:function()
+            {
+                var self=this;
+                return this.filials.filter(function(p){
+                    if (
+                        p.name.toLowerCase().indexOf(self.filterKey.toLowerCase())>=0 
+                    ){
+                        return true
+                    }
+                });
+            }
         }
     }
 </script>
