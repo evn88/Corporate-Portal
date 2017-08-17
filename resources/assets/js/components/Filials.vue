@@ -4,18 +4,18 @@
       <h2>
           {{filial.name}} <small>{{filial.address}}</small>
       </h2> 
-      <groups :filter-key="filterKey" :group-selected="groupSelected"></groups>
+      <groups :filter-key="filterKey" :group-selected="groupSelected" :phones="phones" :filial="filial.name"></groups>
     </div>
 </div>
 </template>
 
 <script>
     export default {
-        props: ['filterKey','filialSelected','groupSelected'],
+        props: ['filterKey','filialSelected','groupSelected','phones'],
         data: function(){
             return {
                 filials: [
-                    { id:1, name: 'ЦРПБ', address: 'Код: (8442) | 40075, г. Волгоград, ул Шопена 13'},
+                    { id:1, name: 'Волгоград', address: 'Код: (8442) | 40075, г. Волгоград, ул Шопена 13'},
                     { id:1, name: 'Пригородные МЭС', address: 'Код: (8442) | 40075, пгт. Городище'},
                     { id:2, name: 'Жирновские МЭС', address: 'Код: (8442) | 40075, г. Жирновск'},
                     { id:3, name: 'Камышинские МЭС', address: '40075, г. Волгоград, ул Шопена 13'},

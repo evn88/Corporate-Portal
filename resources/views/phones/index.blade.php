@@ -30,7 +30,7 @@
         </form>
     </div>    
 
-    <transition name="fade">
+    <transition name="fade" v-cloak>
         <div class="panel panel-default" v-show="showSettings">
         <div class="panel-heading">
             Параметры поиска
@@ -64,16 +64,24 @@
             </div>
         </div>
     </transition>
-    
+
+    <div class="aler alert-danger" v-cloak v-if="true" v-for="error in errors">@{{error}}</div>
+
     <filials 
     :filter-key="searchQuery" 
     :filial-selected="filialSelected"
     :group-selected="groupSelected"
+    :phones="phones"
     >
-        <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
-        <span class="sr-only">Загрузка...</span>
+        
+        <div class="col-lg-12 text-center" style="padding-top:50px">
+            <p class="lead">Загрузка, подождите...</p>
+            <i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i>
+            <span class="sr-only">Загрузка...</span>
+        </div>
+    
     </filials>
-
+    
 </div>
 
 @endsection

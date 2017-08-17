@@ -2,6 +2,11 @@ body {
     font-family: Roboto, Helvetica, Arial, sans-serif;
 }
 
+/* прячет элементы vue до полной загрузки */
+[v-cloak] {
+    display: none;
+}
+
 h1 {
     font-size: 24pt;
 }

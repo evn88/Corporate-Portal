@@ -1,6 +1,10 @@
 <template>
     <ul  class="phones-container">
-        <li class="panel panel-default" v-for="phone in filteredPhones" v-bind:key="phone.id">
+        <li class="panel panel-default" 
+        v-for="phone in filteredPhones" 
+        v-bind:key="phone.id" 
+        v-if="phone.group.toLowerCase() == group.toLowerCase() || phone.filial == filial"
+        >
             <div class="phones-blue-box">
                 <div class="phones-avatar">
                     <img :src="phone.photo" align="left">
@@ -12,10 +16,13 @@
             <div class="phones-description">
                 <p>{{phone.profession}}</p>
                 <div class="phones-numbers">
-                    <i class="fa fa-phone fa-2x"></i> 
-                    <span class="strong">{{phone.int_phone}}</span>
-                    <i class="fa fa-phone-square fa-2x"></i>
-                    <span class="strong">{{phone.ext_phone}}</span>
+
+                        <i class="fa fa-phone fa-2x" v-if="phone.int_phone"></i> 
+                        <span class="strong" v-if="phone.int_phone">{{phone.int_phone}}</span>
+
+                        <i class="fa fa-phone-square fa-2x" v-if="phone.ext_phone"></i>
+                        <span class="strong" v-if="phone.ext_phone">{{phone.ext_phone}}</span>
+
                     <button class="btn btn-default pull-right"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
                 </div>
             </div>
@@ -24,13 +31,14 @@
 </template>
 
 <script>
-let data = require('../phones.js')
+//let data = require('../phones.js')
+
 
     export default {
-        props: ['filterKey'],
+        props: ['filterKey','phones','group','filial'],
         data: function () {
             return { 
-                phones: data
+ 
             }
         },
         computed:
@@ -51,6 +59,5 @@ let data = require('../phones.js')
                 });
             }
         }
-       
     }
 </script>

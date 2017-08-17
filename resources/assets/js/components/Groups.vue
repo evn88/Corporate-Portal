@@ -2,7 +2,7 @@
 <div>
     <div class="flex-group" v-for="group in filteredGroups" v-bind:key="group.id">
         <h3>{{group.name}}</h3>
-        <phones class="flex-container" :filter-key="filterKey"></phones>
+        <phones class="flex-container" :filter-key="filterKey" :phones="phones" :group="group.name"></phones>
     </div>
 </div>
 </template>
@@ -10,10 +10,11 @@
 <script>
 //import phones from './Phones.vue'
     export default {
-        props: ['filterKey','groupSelected'],
+        props: ['filterKey','groupSelected','phones'],
         data: function(){
             return {
                 groups: [
+                    { id:0, name: ''},
                     { id:1, name: 'Отдел информационных технологий'},
                     { id:2, name: 'Отдел кадров'},
                     { id:3, name: 'Отдел капитального строительства'},

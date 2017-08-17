@@ -1,5 +1,5 @@
 
-window._ = require('lodash');
+/*window._ = require('lodash');*/
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -18,6 +18,12 @@ require('bootstrap-sass');
 
 window.Vue = require('vue');
 require('vue-resource');
+
+window.axios = require('axios');
+
+window.axios.defaults.headers.common = {
+    'X-Requested-With': 'XMLHttpRequest'
+};
 
 /**
  * We'll register a HTTP interceptor to attach the "CSRF" header to each of

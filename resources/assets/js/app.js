@@ -16,6 +16,9 @@ Vue.component('filials', require('./components/Filials.vue'));
 Vue.component('groups', require('./components/Groups.vue'));
 Vue.component('phones', require('./components/Phones.vue'));
 
+import axios from 'axios'
+Vue.use(axios)
+
 const app = new Vue({
     el: '#app',
     data: {
@@ -24,10 +27,8 @@ const app = new Vue({
         groupSelected: '',
         showBirthday: '',
         showSettings: JSON.parse(localStorage.getItem('showSettings')),
-        allSettings: { 
-            filialSelected: this.filialSelected,
-            group: '' 
-        }
+        phones: [],
+        errors: []
     },
     methods: {
         changeShowSettings: function(){
@@ -47,5 +48,15 @@ const app = new Vue({
                 return x == x.toLowerCase() ? replacer[ x ] : replacer[ x.toLowerCase() ].toUpperCase();
             });
         }    
+    },
+    mounted: function() {
+        axios.get('http://portal.voenet.local/api/phone/all')
+        .then(response => {
+                // JSON responses are automatically parsed.
+                this.phones = response.data
+            })
+            .catch(e => {
+              this.errors.push(e)
+        })
     }
 });

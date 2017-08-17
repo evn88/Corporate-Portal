@@ -325,6 +325,11 @@
       "resolved": "https://registry.npmjs.org/aws4/-/aws4-1.6.0.tgz",
       "dev": true
     },
+    "axios": {
+      "version": "0.16.2",
+      "from": "axios@latest",
+      "resolved": "https://registry.npmjs.org/axios/-/axios-0.16.2.tgz"
+    },
     "balanced-match": {
       "version": "1.0.0",
       "from": "balanced-match@>=1.0.0 <2.0.0",
@@ -951,8 +956,7 @@
     "debug": {
       "version": "2.6.8",
       "from": "debug@>=2.0.0 <3.0.0",
-      "resolved": "https://registry.npmjs.org/debug/-/debug-2.6.8.tgz",
-      "dev": true
+      "resolved": "https://registry.npmjs.org/debug/-/debug-2.6.8.tgz"
     },
     "debug-fabulous": {
       "version": "0.0.4",
@@ -1332,6 +1336,11 @@
       "from": "flatten@>=1.0.2 <2.0.0",
       "resolved": "https://registry.npmjs.org/flatten/-/flatten-1.0.2.tgz",
       "dev": true
+    },
+    "follow-redirects": {
+      "version": "1.2.4",
+      "from": "follow-redirects@>=1.2.3 <2.0.0",
+      "resolved": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.2.4.tgz"
     },
     "for-in": {
       "version": "1.0.2",
@@ -2081,8 +2090,7 @@
     "is-buffer": {
       "version": "1.1.5",
       "from": "is-buffer@>=1.1.5 <2.0.0",
-      "resolved": "https://registry.npmjs.org/is-buffer/-/is-buffer-1.1.5.tgz",
-      "dev": true
+      "resolved": "https://registry.npmjs.org/is-buffer/-/is-buffer-1.1.5.tgz"
     },
     "is-builtin-module": {
       "version": "1.0.0",
@@ -2966,8 +2974,7 @@
     "ms": {
       "version": "2.0.0",
       "from": "ms@2.0.0",
-      "resolved": "https://registry.npmjs.org/ms/-/ms-2.0.0.tgz",
-      "dev": true
+      "resolved": "https://registry.npmjs.org/ms/-/ms-2.0.0.tgz"
     },
     "multimatch": {
       "version": "2.1.0",

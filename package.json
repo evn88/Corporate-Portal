@@ -16,6 +16,7 @@
     "vue-resource": "^1.0.3"
   },
   "dependencies": {
+    "axios": "^0.16.2",
     "vue-localstorage": "^0.3.0"
   }
 }
