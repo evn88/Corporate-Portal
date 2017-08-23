@@ -40,7 +40,7 @@
                     <div class="col-lg-4">
                         <select name="filial" v-model="filialSelected" class="form-control">
                             <option value="">Все филиалы</option>
-                            <option value="ЦРПБ">Волгоград</option>
+                            <option value="Волгоград">Волгоград</option>
                             <option value="Пригородные МЭС">Пригородные МЭС</option>
                             <option value="Камышинские МЭС">Камышинские МЭС</option>
                             <option value="Жирновские МЭС">Жирновские МЭС</option>
@@ -65,7 +65,10 @@
         </div>
     </transition>
 
-    <div class="aler alert-danger" v-cloak v-if="true" v-for="error in errors">@{{error}}</div>
+    <pre class="alert alert-danger" v-cloak v-if="true" v-for="error in errors">
+    Error axios!
+        @{{error}}
+    </pre>
 
     <filials 
     :filter-key="searchQuery" 

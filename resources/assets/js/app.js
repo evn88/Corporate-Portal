@@ -7,6 +7,9 @@
 
 require('./bootstrap');
 
+import axios from 'axios'
+Vue.use(axios)
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the body of the page. From here, you may begin adding components to
@@ -16,8 +19,24 @@ Vue.component('filials', require('./components/Filials.vue'));
 Vue.component('groups', require('./components/Groups.vue'));
 Vue.component('phones', require('./components/Phones.vue'));
 
-import axios from 'axios'
-Vue.use(axios)
+Vue.filter('searchFor', function (value, searchString) {
+    
+    // The first parameter to this function is the data that is to be filtered.
+    // The second is the string we will be searching for.
+    var result = [];
+    if(!searchString){
+        return value;
+    }
+    searchString = searchString.trim().toLowerCase();
+    result = value.filter(function(item){
+        if(item.title.toLowerCase().indexOf(searchString) !== -1){
+            return item;
+        }
+    })
+    // Return an array with the filtered data.
+    return result;
+})
+        
 
 const app = new Vue({
     el: '#app',
@@ -28,7 +47,8 @@ const app = new Vue({
         showBirthday: '',
         showSettings: JSON.parse(localStorage.getItem('showSettings')),
         phones: [],
-        errors: []
+        errors: [],
+        groups: []
     },
     methods: {
         changeShowSettings: function(){
@@ -50,13 +70,18 @@ const app = new Vue({
         }    
     },
     mounted: function() {
-        axios.get('http://portal.voenet.local/api/phone/all')
+        axios.get('/api/phone/all', {
+            headers: {
+              'Content-type': 'application/json'
+            }
+          })
         .then(response => {
-                // JSON responses are automatically parsed.
                 this.phones = response.data
             })
             .catch(e => {
               this.errors.push(e)
         })
+        //this.groups = _.uniqBy([this.phones], 'group')
+        //console.log(response.data)
     }
 });

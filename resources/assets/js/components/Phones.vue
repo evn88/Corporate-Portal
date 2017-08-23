@@ -3,7 +3,7 @@
         <li class="panel panel-default" 
         v-for="phone in filteredPhones" 
         v-bind:key="phone.id" 
-        v-if="phone.group.toLowerCase() == group.toLowerCase() || phone.filial == filial"
+        v-if="phone.group.toLowerCase() === group.toLowerCase() && phone.filial.toLowerCase() === filial.toLowerCase()"
         >
             <div class="phones-blue-box">
                 <div class="phones-avatar">
@@ -38,7 +38,6 @@
         props: ['filterKey','phones','group','filial'],
         data: function () {
             return { 
- 
             }
         },
         computed:

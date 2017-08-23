@@ -22,12 +22,13 @@ Route::group(['prefix'=>'/phone'],function(){
         $data = [
             [
                 'id'=>1,
+                'gid'=>3,
                 'lastname'=> 'Вершков',
                 'firstname'=> 'Егор',
                 'secondname'=> 'Николаевич',
                 'profession'=> 'Администратор безопасности информационных технологий',
                 'filial'=> 'Волгоград',
-                'group'=> 'Без группы',
+                'group'=> '***',
                 'int_phone'=> '1084',
                 'ext_phone'=> '56-20-77',
                 's_phone'=> '*163#',
@@ -36,6 +37,7 @@ Route::group(['prefix'=>'/phone'],function(){
             ],
             [
                 'id'=>2,
+                'gid'=>3,
                 'lastname'=> 'Кравченко',
                 'firstname'=> 'Андрей',
                 'secondname'=> 'Викторович',
@@ -50,6 +52,7 @@ Route::group(['prefix'=>'/phone'],function(){
             ],
             [
                 'id'=>3,
+                'gid'=>3,
                 'lastname'=> 'Вершкова',
                 'firstname'=> 'Анна',
                 'secondname'=> 'Александровна',
@@ -64,6 +67,7 @@ Route::group(['prefix'=>'/phone'],function(){
             ],
             [
                 'id'=>3,
+                'gid'=>4,
                 'lastname'=> 'Якуненко',
                 'firstname'=> 'Денис',
                 'secondname'=> 'Викторович',
@@ -78,6 +82,7 @@ Route::group(['prefix'=>'/phone'],function(){
             ],
             [
                 'id'=>4,
+                'gid'=>1,
                 'lastname'=> 'Воцко',
                 'firstname'=> 'Александр',
                 'secondname'=> 'Владимирович',
@@ -92,6 +97,7 @@ Route::group(['prefix'=>'/phone'],function(){
             ],
             [
                 'id'=>5,
+                'gid'=>1,
                 'lastname'=> 'Башмаков',
                 'firstname'=> 'Владимир',
                 'secondname'=> 'Александрович',
@@ -106,6 +112,7 @@ Route::group(['prefix'=>'/phone'],function(){
             ],
             [
                 'id'=>6,
+                'gid'=>1,
                 'lastname'=> 'Стадник',
                 'firstname'=> 'Александр',
                 'secondname'=> 'Николаевич',
@@ -120,6 +127,7 @@ Route::group(['prefix'=>'/phone'],function(){
             ],
             [
                 'id'=>7,
+                'gid'=>3,
                 'lastname'=> 'Филатов',
                 'firstname'=> 'Сергей',
                 'secondname'=> 'Васильевич',
@@ -131,24 +139,49 @@ Route::group(['prefix'=>'/phone'],function(){
                 's_phone'=> '',
                 'photo'=> '/img/avatars/user.png',
                 'sort'=> '500'
-            ],
-            [
-                'id'=>5,
-                'lastname'=> 'Тимофеева',
-                'firstname'=> 'Татьяна',
-                'secondname'=> 'Викторовна',
-                'profession'=> 'Инженер-программист',
-                'filial'=> 'Волгоград',
-                'group'=> 'Отдел информационных технологий',
-                'int_phone'=> '1017',
-                'ext_phone'=> '48-14-32',
-                's_phone'=> '',
-                'photo'=> '/img/avatars/user.png',
-                'sort'=> '500'
             ]
         ]
         ;
-        return json_encode($data);
+        return $data;
     });
+
+    Route::get('groups', function(){
+        $data = [
+            [
+                'id'=>0,
+                'pid'=>0,
+                'name'=> 'ЦРПБ',
+            ],
+            [
+                'id'=>1,
+                'pid'=>0,
+                'name'=> 'Отдел информационных технологий',
+            ],
+            [
+                'id'=>2,
+                'pid'=>0,
+                'name'=> 'Администрация',
+            ],
+            [
+                'id'=>3,
+                'pid'=>0,
+                'name'=> 'Производственно техническая служба',
+            ],
+            [
+                'id'=>4,
+                'pid'=>4,
+                'name'=> 'Пригородные МЭС',
+            ],
+            [
+                'id'=>5,
+                'pid'=>4,
+                'name'=> 'Городище',
+            ],
+            
+        ]
+        ;
+        return $data;
+    });
+
     Route::get('user/{id}', function(){ dd($this); })->where('id', '[0-9]+');
 });
