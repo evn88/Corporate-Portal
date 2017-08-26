@@ -19,10 +19,10 @@ Route::get('/user', function (Request $request) {
 
 Route::group(['prefix'=>'/phone'],function(){
     Route::get('all', function(){
-        $data = [
+        $data = collect([
             [
                 'id'=>1,
-                'gid'=>3,
+                'gid'=>2,
                 'lastname'=> 'Вершков',
                 'firstname'=> 'Егор',
                 'secondname'=> 'Николаевич',
@@ -33,11 +33,11 @@ Route::group(['prefix'=>'/phone'],function(){
                 'ext_phone'=> '56-20-77',
                 's_phone'=> '*163#',
                 'photo'=> '/img/avatars/1.jpg',
-                'sort'=> '500'
+                'order'=> '110'
             ],
             [
                 'id'=>2,
-                'gid'=>3,
+                'gid'=>2,
                 'lastname'=> 'Кравченко',
                 'firstname'=> 'Андрей',
                 'secondname'=> 'Викторович',
@@ -48,11 +48,11 @@ Route::group(['prefix'=>'/phone'],function(){
                 'ext_phone'=> '56-20-77',
                 's_phone'=> '*163#',
                 'photo'=> '/img/avatars/user.png',
-                'sort'=> '500'
+                'order'=> '500'
             ],
             [
                 'id'=>3,
-                'gid'=>3,
+                'gid'=>2,
                 'lastname'=> 'Вершкова',
                 'firstname'=> 'Анна',
                 'secondname'=> 'Александровна',
@@ -63,11 +63,11 @@ Route::group(['prefix'=>'/phone'],function(){
                 'ext_phone'=> '56-11-77',
                 's_phone'=> '*163#',
                 'photo'=> '/img/avatars/2.jpg',
-                'sort'=> '500'
+                'order'=> '100'
             ],
             [
                 'id'=>3,
-                'gid'=>4,
+                'gid'=>6,
                 'lastname'=> 'Якуненко',
                 'firstname'=> 'Денис',
                 'secondname'=> 'Викторович',
@@ -78,11 +78,11 @@ Route::group(['prefix'=>'/phone'],function(){
                 'ext_phone'=> '',
                 's_phone'=> '*163#',
                 'photo'=> '/img/avatars/user.png',
-                'sort'=> '500'
+                'order'=> '500'
             ],
             [
                 'id'=>4,
-                'gid'=>1,
+                'gid'=>3,
                 'lastname'=> 'Воцко',
                 'firstname'=> 'Александр',
                 'secondname'=> 'Владимирович',
@@ -93,11 +93,11 @@ Route::group(['prefix'=>'/phone'],function(){
                 'ext_phone'=> '48-14-21',
                 's_phone'=> '',
                 'photo'=> '/img/avatars/user.png',
-                'sort'=> '500'
+                'order'=> '1'
             ],
             [
                 'id'=>5,
-                'gid'=>1,
+                'gid'=>3,
                 'lastname'=> 'Башмаков',
                 'firstname'=> 'Владимир',
                 'secondname'=> 'Александрович',
@@ -108,11 +108,11 @@ Route::group(['prefix'=>'/phone'],function(){
                 'ext_phone'=> '48-14-32',
                 's_phone'=> '',
                 'photo'=> '/img/avatars/user.png',
-                'sort'=> '500'
+                'order'=> '500'
             ],
             [
                 'id'=>6,
-                'gid'=>1,
+                'gid'=>3,
                 'lastname'=> 'Стадник',
                 'firstname'=> 'Александр',
                 'secondname'=> 'Николаевич',
@@ -123,11 +123,11 @@ Route::group(['prefix'=>'/phone'],function(){
                 'ext_phone'=> '48-14-32',
                 's_phone'=> '',
                 'photo'=> '/img/avatars/user.png',
-                'sort'=> '500'
+                'order'=> '500'
             ],
             [
                 'id'=>7,
-                'gid'=>3,
+                'gid'=>2,
                 'lastname'=> 'Филатов',
                 'firstname'=> 'Сергей',
                 'secondname'=> 'Васильевич',
@@ -138,49 +138,55 @@ Route::group(['prefix'=>'/phone'],function(){
                 'ext_phone'=> '48-14-32',
                 's_phone'=> '',
                 'photo'=> '/img/avatars/user.png',
-                'sort'=> '500'
+                'order'=> '500'
             ]
-        ]
-        ;
-        return $data;
+        ]);
+        $sorted = $data->sortBy('order');
+        return  $sorted->values()->all();
     });
 
     Route::get('groups', function(){
-        $data = [
-            [
-                'id'=>0,
-                'pid'=>0,
-                'name'=> 'ЦРПБ',
-            ],
+        $data = collect([
             [
                 'id'=>1,
-                'pid'=>0,
-                'name'=> 'Отдел информационных технологий',
+                'pid'=>NULL,
+                'name'=> 'ЦРПБ',
+                'order' => 100
             ],
             [
                 'id'=>2,
-                'pid'=>0,
-                'name'=> 'Администрация',
+                'pid'=>1,
+                'name'=> 'Отдел информационных технологий',
+                'order' => 400
             ],
             [
                 'id'=>3,
-                'pid'=>0,
-                'name'=> 'Производственно техническая служба',
+                'pid'=>1,
+                'name'=> 'Администрация',
+                'order' => 90
             ],
             [
                 'id'=>4,
-                'pid'=>4,
-                'name'=> 'Пригородные МЭС',
+                'pid'=>1,
+                'name'=> 'Производственно техническая служба',
+                'order' => 500
             ],
             [
                 'id'=>5,
-                'pid'=>4,
+                'pid'=>NULL,
+                'name'=> 'Пригородные МЭС',
+                'order' => 500
+            ],
+            [
+                'id'=>6,
+                'pid'=>5,
                 'name'=> 'Городище',
+                'order' => 500
             ],
             
-        ]
-        ;
-        return $data;
+        ]);
+        $sorted = $data->sortBy('order');
+        return  $sorted->values()->all();
     });
 
     Route::get('user/{id}', function(){ dd($this); })->where('id', '[0-9]+');

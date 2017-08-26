@@ -46,12 +46,12 @@ const app = new Vue({
         groupSelected: '',
         showBirthday: '',
         showSettings: JSON.parse(localStorage.getItem('showSettings')),
-        phones: [],
         errors: [],
+        phones: [],
         groups: []
     },
     methods: {
-        changeShowSettings: function(){
+        toggleSettings: function(){
            this.showSettings = !this.showSettings
            localStorage.setItem('showSettings', this.showSettings)
         },
@@ -70,13 +70,17 @@ const app = new Vue({
         }    
     },
     mounted: function() {
-        axios.get('/api/phone/all', {
-            headers: {
-              'Content-type': 'application/json'
-            }
-          })
+        axios.get('/api/phone/all')
         .then(response => {
                 this.phones = response.data
+            })
+            .catch(e => {
+              this.errors.push(e)
+        })
+
+        axios.get('/api/phone/groups')
+        .then(response => {
+                this.groups = response.data
             })
             .catch(e => {
               this.errors.push(e)

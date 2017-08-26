@@ -11,7 +11,9 @@
     <link rel="stylesheet" href="{{ url('/lib/font-awesome-4.7.0/css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ url('/css/app.css') }}">
     <link rel="stylesheet" href="/css/@yield('css', 'app').css">
+
     <!-- Scripts -->
+    <link rel="preload" href="{{ url('/js/app.js') }}" as="script">
     <script>
         window.Laravel =<?= json_encode([
                 'csrfToken' => csrf_token(),
@@ -97,8 +99,9 @@
 <!--<script src="{{ url('/js/jquery-2.1.1.min.js') }}"></script>-->
 <!--<script src="{{ url('/js/bootstrap.min.js') }}"></script>-->
 <!-- Compiled and minified JavaScript -->
-<script src="{{ url('/vendor/unisharp/laravel-ckeditor/ckeditor.js')}}"></script>
+
 <script src="{{ url('/js/app.js') }}"></script>
+<script src="{{ url('/vendor/unisharp/laravel-ckeditor/ckeditor.js')}}"></script>
 @yield('footer')
 </body>
 </html>

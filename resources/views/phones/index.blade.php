@@ -20,7 +20,7 @@
                     <button 
                     type="button"
                     class="btn btn-default pull-right" 
-                    @click="changeShowSettings()" 
+                    @click="toggleSettings()" 
                     data-toggle="tooltip" 
                     data-placement="top" 
                     data-original-title="Параметры поиска"
@@ -69,6 +69,20 @@
     Error axios!
         @{{error}}
     </pre>
+
+
+<ul>
+    <li v-for="g in groups" v-if="g.pid == null">@{{g.name}}
+        <ul>
+            <li v-for="gp in groups" v-if="g.id === gp.pid">@{{gp.name}}
+                <ul>
+                    <li v-for="i in phones" v-if="i.gid == gp.id">@{{i.lastname}} @{{i.firstname}} </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>   
+
 
     <filials 
     :filter-key="searchQuery" 
