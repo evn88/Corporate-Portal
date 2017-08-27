@@ -4,29 +4,17 @@
       <h2>
           {{filial.name}} <small>address</small>
       </h2> 
-      <groups :filter-key="filterKey" :group-selected="groupSelected" :phones="phones" :filial="filial.id"></groups>
+      <groups :filter-key="filterKey" :group-selected="groupSelected" :phones="phones" :filial="filial.id" :groups="groups"></groups>
     </div>
 </div>
 </template>
 
 <script>
     export default {
-        props: ['filterKey','filialSelected','groupSelected','phones', 'groups'],
+        props: ['filterKey','filialSelected','groupSelected','phones', 'groups', 'filials'],
         data: function(){
             return {
-                filials: [],
             }
-        },
-        mounted: function() {
-            axios.get('/api/phone/groups')
-            .then(response => {
-                    this.filials = response.data
-                })
-                .catch(e => {
-                this.errors.push(e)
-            })
-            //this.groups = _.uniqBy([this.phones], 'group')
-            //console.log(response.data)
         },
         computed:
         {

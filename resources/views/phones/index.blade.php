@@ -71,7 +71,7 @@
     </pre>
 
 
-<ul>
+<ul v-if="false">
     <li v-for="g in groups" v-if="g.pid == null" v-cloak>@{{g.name}}
         <ul>
             <li v-for="gp in filteredGroups" v-if="g.id === gp.pid">@{{gp.name}}
@@ -89,6 +89,8 @@
     :filial-selected="filialSelected"
     :group-selected="groupSelected"
     :phones="phones"
+    :filials="groups"
+    :groups="groups"
     >
         
         <div class="col-lg-12 text-center" style="padding-top:50px">
