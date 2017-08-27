@@ -29,6 +29,18 @@
                         return true
                     }
                 });
+
+                return this.phones.filter(function(p){
+                    if (
+                        p.lastname.toLowerCase().indexOf(self.filterKey.toLowerCase())>=0 
+                        || p.firstname.toLowerCase().indexOf(self.filterKey.toLowerCase())>=0
+                        || p.secondname.toLowerCase().indexOf(self.filterKey.toLowerCase())>=0
+                        || p.int_phone.indexOf(self.filterKey.toLowerCase())>=0
+                        || p.profession.toLowerCase().indexOf(self.filterKey.toLowerCase())>=0
+                    ){
+                        return true
+                    }
+                });
             }
         }
     }

@@ -21,7 +21,6 @@
             {
                 
                 var self=this;
-
                 
                 return this.groups.filter(function(p){
                     if (
