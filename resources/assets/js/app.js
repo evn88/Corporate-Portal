@@ -95,7 +95,6 @@ const app = new Vue({
             var self=this;
             return this.groups.filter(function(p){
                 if (
-
                     //проверяем есть ли внутри группы элементы, если их нет то пропускаем
                     _.findIndex(self.phones, function(o) { return o.gid == p.id; }) >= 0
                 ){

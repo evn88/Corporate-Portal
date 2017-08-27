@@ -74,7 +74,7 @@
 <ul>
     <li v-for="g in groups" v-if="g.pid == null" v-cloak>@{{g.name}}
         <ul>
-            <li v-for="gp in filteredGroups" v-if="g.id === gp.pid || phones.includes(g.id)">@{{gp.name}}
+            <li v-for="gp in filteredGroups" v-if="g.id === gp.pid">@{{gp.name}}
                 <ul>
                     <li v-for="i in phones" v-if="i.gid == gp.id">@{{i.lastname}} @{{i.firstname}} </li>
                 </ul>

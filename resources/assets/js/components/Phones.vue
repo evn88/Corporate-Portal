@@ -3,7 +3,7 @@
         <li class="panel panel-default" 
         v-for="phone in filteredPhones" 
         v-bind:key="phone.id" 
-        v-if="phone.group.toLowerCase() === group.toLowerCase() && phone.filial.toLowerCase() === filial.toLowerCase()"
+        v-if="phone.gid === group"
         >
             <div class="phones-blue-box">
                 <div class="phones-avatar">
