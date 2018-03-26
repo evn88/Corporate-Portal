@@ -7,22 +7,21 @@ use Carbon\Carbon;
 
 class Conference extends Curl
 {
-    public function getAllConference()
-    {
-        $trueconf = Curl::to('https://10.77.101.19/api/v2/conference')
+    public function __construct($section){
+        $this->section = ($section) ? $section: 'users';
+        $this->data = Curl::to('https://'.env('TRUECONF_HOST').':'.env('TRUECONF_PORT').'/api/v3/'.$this->section)
+        ->withHeader('content-type: application/json')
         ->withData( array( 'access_token' => env('TRUECONF_KEY') ) )
+        ->returnResponseObject()
         ->asJson()
         ->get();
-        
-        foreach ($trueconf as $item){
-            foreach ($item as $key => $i){
-                //dd((isset($item->$key->invitation_timestamp)? $item->$key->invitation_timestamp : null));
-                //return Carbon::parse(isset($item->$key->invitation_timestamp)? $item->$key->invitation_timestamp : null)->format('d.m.Y H:i');
-                //dd($i);
-            }
-            return $item; 
+    }
+    public function getAll()
+    {
+        if(isset($this->data->error)){
+            dd($this->error);
+        }else {
+            return collect($this->data->content->{$this->section})->sortByDesc(['status']);
         }
-        
-        //return $trueconf;
     }
 }
