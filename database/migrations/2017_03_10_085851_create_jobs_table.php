@@ -8,6 +8,7 @@ class CreateJobsTable extends Migration
 {
     /**
      * Run the migrations.
+     * Таблица для выполнения заданий в фоне
      *
      * @return void
      */
