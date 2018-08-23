@@ -31,32 +31,25 @@
 </template>
 
 <script>
-//let data = require('../phones.js')
-
-
     export default {
         props: ['filterKey','phones','group','filial'],
-        data: function () {
-            return { 
-            }
-        },
         computed:
         {
-            filteredPhones:function()
-            {
-                var self=this;
-                return this.phones.filter(function(p){
-                    if (
-                        p.lastname.toLowerCase().indexOf(self.filterKey.toLowerCase())>=0 
-                        || p.firstname.toLowerCase().indexOf(self.filterKey.toLowerCase())>=0
-                        || p.secondname.toLowerCase().indexOf(self.filterKey.toLowerCase())>=0
-                        || p.int_phone.indexOf(self.filterKey.toLowerCase())>=0
-                        || p.profession.toLowerCase().indexOf(self.filterKey.toLowerCase())>=0
-                    ){
-                        return true
-                    }
-                });
-            }
+            // filteredPhones:function()
+            // {
+            //     var self=this;
+            //     return this.phones.filter(function(p){
+            //         if (
+            //             p.lastname.toLowerCase().indexOf(self.filterKey.toLowerCase())>=0 
+            //             || p.firstname.toLowerCase().indexOf(self.filterKey.toLowerCase())>=0
+            //             || p.secondname.toLowerCase().indexOf(self.filterKey.toLowerCase())>=0
+            //             || p.int_phone.indexOf(self.filterKey.toLowerCase())>=0
+            //             || p.profession.toLowerCase().indexOf(self.filterKey.toLowerCase())>=0
+            //         ){
+            //             return true
+            //         }
+            //     });
+            // }
         }
     }
 </script>

@@ -1,28 +1,12 @@
-
-/**
- * First we will load all of this project's JavaScript dependencies which
- * include Vue and Vue Resource. This gives a great starting point for
- * building robust, powerful web applications using Vue and Laravel.
- */
-
 require('./bootstrap');
 
 import axios from 'axios'
 Vue.use(axios)
-
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the body of the page. From here, you may begin adding components to
- * the application, or feel free to tweak this setup for your needs.
- */
 Vue.component('filials', require('./components/Filials.vue'));
 Vue.component('groups', require('./components/Groups.vue'));
 Vue.component('phones', require('./components/Phones.vue'));
 
 Vue.filter('searchFor', function (value, searchString) {
-    
-    // The first parameter to this function is the data that is to be filtered.
-    // The second is the string we will be searching for.
     var result = [];
     if(!searchString){
         return value;
@@ -36,8 +20,6 @@ Vue.filter('searchFor', function (value, searchString) {
     // Return an array with the filtered data.
     return result;
 })
-        
-
 const app = new Vue({
     el: '#app',
     data: {
@@ -67,40 +49,56 @@ const app = new Vue({
             return str.replace(/[A-z/,.;\'\]\[]/g, function ( x ){
                 return x == x.toLowerCase() ? replacer[ x ] : replacer[ x.toLowerCase() ].toUpperCase();
             });
-        }    
+        }
     },
     mounted: function() {
         axios.get('/api/phone/all')
         .then(response => {
-                this.phones = response.data
-            })
-            .catch(e => {
-              this.errors.push(e)
+            this.phones = response.data
         })
+        .catch(e => {
+            this.errors.push(e)
+        }),
 
+        //для выборки в настройках поиска. Делать повторный запрос не очень хорошо, но пока так...
         axios.get('/api/phone/groups')
         .then(response => {
-                this.groups = response.data
-            })
-            .catch(e => {
-              this.errors.push(e)
+            this.groups = response.data
+        })
+        .catch(e => {
+            this.errors.push(e)
         })
         //this.groups = _.uniqBy([this.phones], 'group')
         //console.log(response.data)
     },
     computed:
     {
-        filteredGroups:function()
-        {
-            var self=this;
-            return this.groups.filter(function(p){
-                if (
-                    //проверяем есть ли внутри группы элементы, если их нет то пропускаем
-                    _.findIndex(self.phones, function(o) { return o.gid == p.id; }) >= 0
-                ){
-                    return true
-                }
-            });
-        }
+        // filteredGroups:function()
+        // {
+        //     var self=this;
+        //     return this.groups.filter(function(p){
+        //         if (
+        //             //проверяем есть ли внутри группы элементы, если их нет то пропускаем
+        //             _.findIndex(self.phones, function(o) { return o.gid == p.id; }) >= 0
+        //         ){
+        //             return true
+        //         }
+        //     });
+        // },
+        // filteredPhones:function()
+        //     {
+        //         var self=this;
+        //         return this.phones.filter(function(p){
+        //             if (
+        //                 p.lastname.toLowerCase().indexOf(self.filterKey.toLowerCase())>=0 
+        //                 || p.firstname.toLowerCase().indexOf(self.filterKey.toLowerCase())>=0
+        //                 || p.secondname.toLowerCase().indexOf(self.filterKey.toLowerCase())>=0
+        //                 || p.int_phone.indexOf(self.filterKey.toLowerCase())>=0
+        //                 || p.profession.toLowerCase().indexOf(self.filterKey.toLowerCase())>=0
+        //             ){
+        //                 return true
+        //             }
+        //         });
+        //     }
     }
 });

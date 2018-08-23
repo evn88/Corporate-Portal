@@ -49,6 +49,7 @@
                     <div class="col-lg-4">
                         <select name="group" v-model="groupSelected" class="form-control">
                             <option value="">Все группы</option>
+                            <option value="Администрация">Администрация</option>
                             <option value="Отдел информационных технологий">Отдел информационных технологий</option>
                             <option value="Отдел кадров">Отдел кадров</option>
                         </select>
@@ -71,17 +72,7 @@
     </pre>
 
 
-<ul v-if="false">
-    <li v-for="g in groups" v-if="g.pid == null" v-cloak>@{{g.name}}
-        <ul>
-            <li v-for="gp in filteredGroups" v-if="g.id === gp.pid">@{{gp.name}}
-                <ul>
-                    <li v-for="i in phones" v-if="i.gid == gp.id">@{{i.lastname}} @{{i.firstname}} </li>
-                </ul>
-            </li>
-        </ul>
-    </li>
-</ul>   
+
 
 
     <filials 
@@ -96,7 +87,6 @@
         <div class="col-lg-12 text-center" style="padding-top:50px">
             <p class="lead">Загрузка, подождите...</p>
             <i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i>
-            <span class="sr-only">Загрузка...</span>
         </div>
     
     </filials>

@@ -1,35 +1,32 @@
 <template>
 <div>
-    <div class="filials" v-for="filial in filteredFilials" v-bind:key="filial.id">
+    <pre>{{ filteredFilials }}</pre>
+    <pre>{{ filteredPhones }}</pre>
+    <div class="filials" v-for="filial in filteredPhones" v-bind:key="filial.filial">
       <h2>
-          {{filial.name}} <small>address</small>
+          {{filial.filial}} <small>address</small>
       </h2> 
-      <groups :filter-key="filterKey" :group-selected="groupSelected" :phones="phones" :filial="filial.id" :groups="groups"></groups>
+      <!-- <groups :filter-key="filterKey" :group-selected="groupSelected" :phones="phones" :filial="filial.id" :groups="groups"></groups> -->
     </div>
 </div>
 </template>
 
 <script>
     export default {
-        props: ['filterKey','filialSelected','groupSelected','phones', 'groups', 'filials'],
-        data: function(){
-            return {
-            }
-        },
-        computed:
-        {
-            filteredFilials:function()
+        props: [
+            'filterKey',
+            'filialSelected',
+            'groupSelected',
+            'phones', 
+            'groups', 
+            'filials',
+            'filteredPhones',
+            'filteredFilials'
+        ],
+        computed: {
+        filteredPhones: function()
             {
-               var self=this;
-                return this.filials.filter(function(p){
-                    if (
-                        //проверяем корневую группу
-                       p.pid == null
-                    ){
-                        return true
-                    }
-                });
-
+                var self=this;
                 return this.phones.filter(function(p){
                     if (
                         p.lastname.toLowerCase().indexOf(self.filterKey.toLowerCase())>=0 
@@ -42,6 +39,16 @@
                     }
                 });
             }
+        },
+        filteredFilials: function() 
+        {
+            var self=this;
+            console.log(this);
+            return this.filter (function(p){
+                console. log(p);
+                return true;
+                // if (p.filial === 'Волгоград') { return true };
+            });
         }
     }
 </script>

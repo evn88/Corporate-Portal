@@ -4,7 +4,7 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <div class="row">
-                    <div class="col-md-6"><h5>Добавить новость</h5></div>
+                    <div class="col-md-6"><h3>Добавить новость</h3></div>
                     <div class="col-md-6 "><a href="{{ url('admin/news')}}" class="btn btn-default pull-right">Отмена</a></div>
                 </div>
             </div>
