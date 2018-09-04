@@ -1,17 +1,16 @@
 <template>
 <div>
-    <div class="filials" v-for="(item, key) in filials" v-bind:key="item.key" :filter-key="filterKey"> 
-        <h3>
+    <div class="filials" v-for="(item, key) in phones" v-bind:key="item.key" :filter-key="filterKey"> 
+        <h2>
             {{ key }} <small></small>
-        </h3>
+        </h2>
 
-        <groups :filter-key="filterKey" 
+        <filials :filter-key="filterKey" 
           :group-selected="groupSelected" 
-          :groups="item"
+          :filials="item"
         >
-        </groups>
+        </filials>
     </div>
-
 </div>
 </template>
 

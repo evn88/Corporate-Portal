@@ -1,7 +1,8 @@
 require('./bootstrap');
 
-import axios from 'axios'
-Vue.use(axios)
+import axios from 'axios';
+Vue.use(axios); 
+Vue.component('orgs', require('./components/Orgs.vue'));
 Vue.component('filials', require('./components/Filials.vue'));
 Vue.component('groups', require('./components/Groups.vue'));
 Vue.component('phones', require('./components/Phones.vue'));
@@ -30,7 +31,9 @@ const app = new Vue({
         showSettings: JSON.parse(localStorage.getItem('showSettings')),
         errors: [],
         phones: [],
-        groups: []
+        groups: [],
+        filials: [],
+        orgs: []
     },
     methods: {
         toggleSettings: function(){
@@ -54,51 +57,27 @@ const app = new Vue({
     mounted: function() {
         axios.get('/api/phone/all')
         .then(response => {
-            this.phones = response.data
+            this.phones = response.data;
+            // console.log(this.phones);
+            //this.filials = _.uniqBy(response.data, 'filial');
         })
         .catch(e => {
-            this.errors.push(e)
+            this.errors.push(e);
         }),
 
         //для выборки в настройках поиска. Делать повторный запрос не очень хорошо, но пока так...
         axios.get('/api/phone/groups')
         .then(response => {
-            this.groups = response.data
+            this.groups = response.data;
         })
         .catch(e => {
-            this.errors.push(e)
+            this.errors.push(e);
         })
-        //this.groups = _.uniqBy([this.phones], 'group')
+        this.groups = _.uniqBy([this.phones], 'group');
         //console.log(response.data)
     },
     computed:
     {
-        // filteredGroups:function()
-        // {
-        //     var self=this;
-        //     return this.groups.filter(function(p){
-        //         if (
-        //             //проверяем есть ли внутри группы элементы, если их нет то пропускаем
-        //             _.findIndex(self.phones, function(o) { return o.gid == p.id; }) >= 0
-        //         ){
-        //             return true
-        //         }
-        //     });
-        // },
-        // filteredPhones:function()
-        //     {
-        //         var self=this;
-        //         return this.phones.filter(function(p){
-        //             if (
-        //                 p.lastname.toLowerCase().indexOf(self.filterKey.toLowerCase())>=0 
-        //                 || p.firstname.toLowerCase().indexOf(self.filterKey.toLowerCase())>=0
-        //                 || p.secondname.toLowerCase().indexOf(self.filterKey.toLowerCase())>=0
-        //                 || p.int_phone.indexOf(self.filterKey.toLowerCase())>=0
-        //                 || p.profession.toLowerCase().indexOf(self.filterKey.toLowerCase())>=0
-        //             ){
-        //                 return true
-        //             }
-        //         });
-        //     }
+
     }
 });

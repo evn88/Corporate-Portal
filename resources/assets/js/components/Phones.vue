@@ -1,9 +1,8 @@
 <template>
     <ul  class="phones-container">
         <li class="panel panel-default" 
-        v-for="phone in filteredPhones" 
-        v-bind:key="phone.id" 
-        v-if="phone.gid === group"
+        v-for="phone in phones" 
+        v-bind:key="phone.key"
         >
             <div class="phones-blue-box">
                 <div class="phones-avatar">

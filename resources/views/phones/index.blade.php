@@ -71,17 +71,13 @@
         @{{error}}
     </pre>
 
-
-
-
-
-    <filials 
+    <orgs 
     :filter-key="searchQuery" 
     :filial-selected="filialSelected"
     :group-selected="groupSelected"
     :phones="phones"
-    :filials="groups"
-    :groups="groups"
+    {{-- :filials="groups"
+    :groups="groups" --}}
     >
         
         <div class="col-lg-12 text-center" style="padding-top:50px">
@@ -89,7 +85,7 @@
             <i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i>
         </div>
     
-    </filials>
+    </orgs>
 </div>
 
 @endsection
