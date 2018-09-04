@@ -1,6 +1,6 @@
 <template>
 <div>
-    <div class="filials" v-for="(item, key) in phones" v-bind:key="item.key" :filter-key="filterKey"> 
+    <div class="filials" v-for="(item, key) in filteredPhones" v-bind:key="item.key" :filter-key="filterKey"> 
         <h2>
             {{ key }} <small></small>
         </h2>
@@ -27,6 +27,11 @@
         methods: {
         },
         computed: {
+            filteredPhones: function(){
+            var filterKey = this.filterKey;
+            console.log("phones: ", this.phones.constructor.name);
+                return this.phones;
+            }
         }
     }
 </script>

@@ -1,7 +1,7 @@
 require('./bootstrap');
 
 import axios from 'axios';
-Vue.use(axios); 
+// Vue.use(axios); 
 Vue.component('orgs', require('./components/Orgs.vue'));
 Vue.component('filials', require('./components/Filials.vue'));
 Vue.component('groups', require('./components/Groups.vue'));
@@ -21,6 +21,7 @@ Vue.filter('searchFor', function (value, searchString) {
     // Return an array with the filtered data.
     return result;
 })
+
 const app = new Vue({
     el: '#app',
     data: {
