@@ -29,8 +29,16 @@
         computed: {
             filteredPhones: function(){
             var filterKey = this.filterKey;
-            console.log("phones: ", this.phones.constructor.name);
-                return this.phones;
+            var self = this;
+            console.log("phones: ", Object.getOwnPropertyNames(this.phones)[0]);
+            return this.phones;
+
+            // var orgs = Object.getOwnPropertyNames(this.phones);
+            //     return this.phones.filter(function(q){
+            //         if (q.getOwnPropertyNames(self.phones)[0].toLowerCase().indexOf(filterKey.toLowerCase())>=0 ){
+            //             return true;
+            //         }
+            //     });
             }
         }
     }
