@@ -18,9 +18,6 @@
 - npm install gulp -g
 - run gulp
 
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
 
 ## Security Vulnerabilities
 
