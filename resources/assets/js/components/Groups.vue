@@ -1,7 +1,7 @@
 <template>
 <div>
-    <div class="flex-group" v-for="(item, key) in groups" v-bind:key="item.key">
-        <h3>{{key}}</h3>
+    <div class="flex-group" v-for="(item, key) in groups" v-bind:key="item.key" v-if="countGroups > 0">
+        <h3>{{item.name}} <small></small></h3>
         <phones class="flex-container" 
         :filter-key="filterKey" 
         :phones="item"
@@ -12,27 +12,41 @@
 
 <script>
     export default {
-        props: ['filterKey','groupSelected','phones','groups','filialName'],
+        props: [
+            'filterKey',
+            'groupSelected',
+            'phones',
+            'groups',
+            'phones'
+        ],
+        methods: {
+            test: function(e){
+                console.log("всплытие события",e);
+                return e;
+            }
+        },
         computed:
         {
-            filteredGroups:function()
-            {
+            filterGroups: function(){
                 var self=this;
-                // console.log(this.filialName);
-                var data = this.phones.filter(function(p){
-                    if (
-                        p.lastname.toLowerCase().indexOf(self.filterKey.toLowerCase())>=0 
-                        || p.firstname.toLowerCase().indexOf(self.filterKey.toLowerCase())>=0
-                        || p.secondname.toLowerCase().indexOf(self.filterKey.toLowerCase())>=0
-                        || p.int_phone.indexOf(self.filterKey.toLowerCase())>=0
-                        || p.profession.toLowerCase().indexOf(self.filterKey.toLowerCase())>=0
-                        && p.filial === self.filialName
-                    ){
-                        return true
-                    }
-                });
-                // return data              
-                return _.uniqBy(data,'filial');                
+                var count = 0;
+                for (var key in this.groups){
+                    this.groups[key].filter(function(p){
+                        if (
+                            p.lastname.toLowerCase().indexOf(self.filterKey.toLowerCase())>=0 
+                            || p.firstname.toLowerCase().indexOf(self.filterKey.toLowerCase())>=0
+                            || p.secondname.toLowerCase().indexOf(self.filterKey.toLowerCase())>=0
+                            || p.int_phone.indexOf(self.filterKey.toLowerCase())>=0
+                            || p.profession.toLowerCase().indexOf(self.filterKey.toLowerCase())>=0
+                        ){
+                            count++;
+                        }
+                    });
+                }
+                this.countGroups = count;
+                console.log("countGroups ", count);
+                if (count>0) return this.groups;
+                count = 0;
             }
         }
     }

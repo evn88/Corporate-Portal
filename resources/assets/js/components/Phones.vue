@@ -22,7 +22,7 @@
                         <i class="fa fa-phone-square fa-2x" v-if="phone.ext_phone"></i>
                         <span class="strong" v-if="phone.ext_phone">{{phone.ext_phone}}</span>
 
-                    <button class="btn btn-default pull-right"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
+                    <a href="" class="strong pull-right"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></a>
                 </div>
             </div>
         </li>
@@ -31,24 +31,30 @@
 
 <script>
     export default {
-        props: ['filterKey','phones','group','filial'],
+        props: ['filterKey','phones'],
         computed:
         {
-            // filteredPhones:function()
-            // {
-            //     var self=this;
-            //     return this.phones.filter(function(p){
-            //         if (
-            //             p.lastname.toLowerCase().indexOf(self.filterKey.toLowerCase())>=0 
-            //             || p.firstname.toLowerCase().indexOf(self.filterKey.toLowerCase())>=0
-            //             || p.secondname.toLowerCase().indexOf(self.filterKey.toLowerCase())>=0
-            //             || p.int_phone.indexOf(self.filterKey.toLowerCase())>=0
-            //             || p.profession.toLowerCase().indexOf(self.filterKey.toLowerCase())>=0
-            //         ){
-            //             return true
-            //         }
-            //     });
-            // }
+            filteredPhones:function()
+            {
+                var count = 0;
+                var self=this;
+                var result = this.phones.filter(function(p){
+                    if (
+                        p.lastname.toLowerCase().indexOf(self.filterKey.toLowerCase())>=0 
+                        || p.firstname.toLowerCase().indexOf(self.filterKey.toLowerCase())>=0
+                        || p.secondname.toLowerCase().indexOf(self.filterKey.toLowerCase())>=0
+                        || p.int_phone.indexOf(self.filterKey.toLowerCase())>=0
+                        || p.profession.toLowerCase().indexOf(self.filterKey.toLowerCase())>=0
+                    ){
+                        return true;
+                        count++;
+                    }
+                });
+                this.countPhones = count;
+                this.$emit('phone_count', count);
+                return result;
+                count = 0;
+            }
         }
     }
 </script>

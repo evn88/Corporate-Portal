@@ -19,139 +19,32 @@ Route::get('/user', function (Request $request) {
 
 Route::group(['prefix'=>'/phone'],function(){
     Route::get('all', function(){
-        $data = collect(
+        $data = collect([
             [
-            "Волгоградоблэлектро" => [
-                "Волгоград" => [
-                    "Администрация" => [
-                        [
-                            'id'=>1,
-                            'gid'=>2,
-                            'lastname'=> 'Вершков',
-                            'firstname'=> 'Егор',
-                            'secondname'=> 'Николаевич',
-                            'profession'=> 'Администратор безопасности информационных технологий',
-                            'int_phone'=> '1084',
-                            'ext_phone'=> '56-20-77',
-                            's_phone'=> '*163#',
-                            'photo'=> '/img/avatars/1.jpg',
-                            'order'=> '110'
-                        ],
-                        [
-                            'id'=>3,
-                            'gid'=>2,
-                            'lastname'=> 'Вершкова',
-                            'firstname'=> 'Анна',
-                            'secondname'=> 'Александровна',
-                            'profession'=> 'web',
-                            'filial'=> 'Волгоград',
-                            'group'=> 'Отдел информационных технологий',
-                            'int_phone'=> '666',
-                            'ext_phone'=> '56-11-77',
-                            's_phone'=> '*163#',
-                            'photo'=> '/img/avatars/2.jpg',
-                            'order'=> '100'
-                        ]
+                "name" => "Волгоградоблэлекто",
+                [
+                    "name" => "Волгоград",
+                    [
+                        "id" => 1
                     ],
-                        "Администрация" => [
-                            [
-                                'id'=>1,
-                                'gid'=>2,
-                                'lastname'=> 'Вершков',
-                                'firstname'=> 'Егор',
-                                'secondname'=> 'Николаевич',
-                                'profession'=> 'Администратор безопасности информационных технологий',
-                                'int_phone'=> '1084',
-                                'ext_phone'=> '56-20-77',
-                                's_phone'=> '*163#',
-                                'photo'=> '/img/avatars/1.jpg',
-                                'order'=> '110'
-                            ],
-                            [
-                                'id'=>3,
-                                'gid'=>2,
-                                'lastname'=> 'Вершкова',
-                                'firstname'=> 'Анна',
-                                'secondname'=> 'Александровна',
-                                'profession'=> 'web',
-                                'filial'=> 'Волгоград',
-                                'group'=> 'Отдел информационных технологий',
-                                'int_phone'=> '666',
-                                'ext_phone'=> '56-11-77',
-                                's_phone'=> '*163#',
-                                'photo'=> '/img/avatars/2.jpg',
-                                'order'=> '100'
-                            ]
-                        ]
+                    [
+                        "id" => 2
+                    ]
                 ],
-                "Пригородные МЭС" => [
-                    "Городище" => [
-                        [
-                            'id'=>1,
-                            'gid'=>2,
-                            'lastname'=> 'Писюков',
-                            'firstname'=> 'Александр',
-                            'secondname'=> 'Михайлович',
-                            'profession'=> 'Писюкатый писюкан',
-                            'int_phone'=> '1084',
-                            'ext_phone'=> '56-20-77',
-                            's_phone'=> '*163#',
-                            'photo'=> '/img/avatars/1.jpg',
-                            'order'=> '110'
-                        ],
-                        [
-                        'id' => 2,
-                        'name' => 'test2'
-                        ],
+                [
+                    "name" => "Городище",
+                    [
+                        "id" => 3
                     ],
-                    "Гумракский участок" =>[
-                        [
-                        'id' => 1,
-                        'name' => 'test'
-                        ],
-                        [
-                        'id' => 2,
-                        'name' => 'test2'
-                        ],
-                    ], 
-                ],
-            ],
-            "Волгоградоблэлектросбыт" => [
-                "Волгоград" => [
-                    "Администрация" => [
-                        [
-                            'id'=>1,
-                            'gid'=>2,
-                            'lastname'=> 'Хрюков',
-                            'firstname'=> 'Николай',
-                            'secondname'=> 'Валентинович',
-                            'profession'=> 'Администратор поросячих дел',
-                            'int_phone'=> '1084',
-                            'ext_phone'=> '56-20-77',
-                            's_phone'=> '*163#',
-                            'photo'=> '/img/avatars/1.jpg',
-                            'order'=> '110'
-                        ],
-                        [
-                            'id'=>3,
-                            'gid'=>2,
-                            'lastname'=> 'Попкова',
-                            'firstname'=> 'Маша',
-                            'secondname'=> 'Александровна',
-                            'profession'=> 'web',
-                            'filial'=> 'Волгоград',
-                            'group'=> 'Отдел информационных технологий',
-                            'int_phone'=> '666',
-                            'ext_phone'=> '56-11-77',
-                            's_phone'=> '*163#',
-                            'photo'=> '/img/avatars/2.jpg',
-                            'order'=> '100'
-                        ]
+                    [
+                        "id" => 4
                     ]
                 ]
+            ],
+            [
+                "name" => "Волгоградоблэлектросбыт"
             ]
-        ]
-        );
+        ]);
         $sorted = $data->sortBy('order');
         return  $sorted->toJson();
     });

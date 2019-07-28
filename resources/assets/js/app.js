@@ -32,9 +32,12 @@ const app = new Vue({
         showSettings: JSON.parse(localStorage.getItem('showSettings')),
         errors: [],
         phones: [],
-        groups: [],
-        filials: [],
-        orgs: []
+        newphones:[],
+        //groups: [],
+        //filials: [],
+        //orgs: [],
+        //countPhones: 0,
+        //countGroups: 0
     },
     methods: {
         toggleSettings: function(){

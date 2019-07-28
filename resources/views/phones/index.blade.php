@@ -76,8 +76,6 @@
     :filial-selected="filialSelected"
     :group-selected="groupSelected"
     :phones="phones"
-    {{-- :filials="groups"
-    :groups="groups" --}}
     >
         
         <div class="col-lg-12 text-center" style="padding-top:50px">
