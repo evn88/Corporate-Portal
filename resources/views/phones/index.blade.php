@@ -10,25 +10,25 @@
                 <span class="input-group-addon" style="width:1%;">
                     <i class="fa fa-search fa-2x"></i>
                 </span>
-                <input 
-                    class="form-control" 
-                    placeholder="Поиск по фамилии, имени, номеру телефона, профессии" autocomplete="off" autofocus="autofocus" 
-                    type="text" 
+                <input
+                    class="form-control"
+                    placeholder="Поиск по фамилии, имени, номеру телефона, профессии" autocomplete="off" autofocus="autofocus"
+                    type="text"
                     v-model="searchQuery"
                 >
                 <span class="input-group-addon" style="width:1%;">
-                    <button 
+                    <button
                     type="button"
-                    class="btn btn-default pull-right" 
-                    @click="toggleSettings()" 
-                    data-toggle="tooltip" 
-                    data-placement="top" 
+                    class="btn btn-default pull-right"
+                    @click="toggleSettings()"
+                    data-toggle="tooltip"
+                    data-placement="top"
                     data-original-title="Параметры поиска"
                     ><i class="fa fa-sliders" aria-hidden="true"></i></button>
                 </span>
             </div>
         </form>
-    </div>    
+    </div>
 
     <transition name="fade" v-cloak>
         <div class="panel panel-default" v-show="showSettings">
@@ -71,18 +71,18 @@
         @{{error}}
     </pre>
 
-    <orgs 
-    :filter-key="searchQuery" 
+    <orgs
+    :filter-key="searchQuery"
     :filial-selected="filialSelected"
     :group-selected="groupSelected"
     :phones="phones"
     >
-        
+
         <div class="col-lg-12 text-center" style="padding-top:50px">
             <p class="lead">Загрузка, подождите...</p>
             <i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i>
         </div>
-    
+
     </orgs>
 </div>
 
