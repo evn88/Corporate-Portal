@@ -16,7 +16,7 @@
     "vue-resource": "^1.5.1"
   },
   "dependencies": {
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "chalk": "^2.4.1",
     "vue-localstorage": "^0.3.0",
     "vue-template-compiler": "^2.5.17"
